@@ -1,13 +1,7 @@
 # Bruning - Recuperadora e Estética Automotiva
 
-![Bruning Logo](public/favicon.svg)
+![Bruning Logo](public/favicon.ico)
 
-
-## 🌐 Acesso Online
-
-- **Site em Produção:** https://autogaropaba.com
-- **Desenvolvimento Local:** http://localhost:3000
-- **Build Estático:** http://localhost:8000
 
 ## 🚀 Tecnologias
 
@@ -62,7 +56,7 @@
 ### Arquivos SEO
 - ✅ `robots.txt` - Instruções para crawlers
 - ✅ `sitemap.xml` - Mapa do site
-- ✅ `favicon.svg` - Ícone personalizado
+- ✅ `favicon.ico` - Ícone personalizado
 
 ### Performance
 - Code splitting (5 chunks)
@@ -124,7 +118,7 @@ autogaropaba.com/
 ├── public/
 │   ├── sitemap.xml               # Mapa do site
 │   ├── robots.txt                # Instruções para bots
-│   ├── favicon.svg               # Ícone do site
+│   ├── favicon.ico               # Ícone do site
 │   └── assets/                   # Imagens do projeto
 ├── scripts/
 │   └── prerender.mjs             # Script de pre-render SEO
@@ -154,99 +148,12 @@ O site inclui 13 imagens de Garopaba no carrossel:
 - **Localização:** Garopaba, SC - Brasil
 - **Endereço:** Garopaba, SC 88495-000
 
-## 🌍 Deploy
 
-### Opções de Hosting
-
-1. **Vercel (Recomendado)**
-   ```bash
-   npm install -g vercel
-   vercel
-   ```
-
-2. **Netlify**
-   ```bash
-   npm install -g netlify-cli
-   netlify deploy --prod --dir=build
-   ```
-
-3. **GitHub Pages**
-   - Push para branch `main`
-   - Ativar GitHub Pages nas configurações
-
-4. **Servidor Tradicional**
-   - Upload da pasta `build/` para servidor
-   - Servir com nginx/apache
-
-## 🔒 Segurança
-
-- ✅ HTTPS obrigatório
-- ✅ Headers de segurança configurados
-- ✅ Sem dados sensíveis no código
-- ✅ Ambiente variáveis para configurações
-
-## 📊 Performance
-
-**Lighthouse Scores (alvo)**
-- Performance: 90+
-- Accessibility: 95+
-- Best Practices: 95+
-- SEO: 100
-
-**Tamanho do Build**
-- JS: ~297 KB (gzip: ~68 KB)
-- CSS: 33 KB (gzip: 7 KB)
-- HTML: 4 KB (gzip: 1 KB)
-
-## 🐛 Troubleshooting
-
-### CORS Error ao testar build localmente
-```bash
-npm run serve:build
-# Acesse: http://localhost:8000
-```
-
-### Port 3000 em uso
-Vite tentará porta 3001 automaticamente
-
-### Favicon não aparece
-- Limpar cache do navegador (Ctrl+Shift+Del)
-- Ou abrir em modo incógnito
-
+ 
 ## 📚 Documentação Adicional
 
 - **SEO:** Veja `SEO_CONFIG.md` para detalhes de otimização
 - **Componentes:** Componentes Radix UI em `src/components/ui/`
 - **Estilos:** Tailwind CSS configurado em `tailwind.config.ts`
 
-## 🤝 Contribuindo
-
-1. Fork o projeto
-2. Crie branch para sua feature (`git checkout -b feature/AmazingFeature`)
-3. Commit suas mudanças (`git commit -m 'Add some AmazingFeature'`)
-4. Push para o branch (`git push origin feature/AmazingFeature`)
-5. Abra um Pull Request
-
-## 📄 Licença
-
-Este projeto está licenciado sob a Licença MIT - veja arquivo LICENSE para detalhes.
-
-## 👨‍💼 Autor
-
-**Bruning - Recuperadora e Estética Automotiva**
-
-- 📞 Telefone: +55 54 98415-1823
-- 📍 Localização: Garopaba, SC
-
-## ⭐ Agradecimentos
-
-- Radix UI pela excelente biblioteca de componentes
-- Vite pelo build rápido e eficiente
-- Tailwind CSS pelo styling responsivo
-- Comunidade React/TypeScript
-
----
-
-**Última atualização:** 21 de janeiro de 2026
-
-**Status:** ✅ Pronto para Produção
+ 

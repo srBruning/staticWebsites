@@ -1,6 +1,6 @@
 import { Phone } from 'lucide-react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
-import logo from 'figma:asset/f4d68675a5e04ba97bcb72894b683d713c8fa804.png';
+import logo from 'figma:asset/logo.png';
 
 export function Hero() {
   return (
