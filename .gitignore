@@ -1,0 +1,6 @@
+**/node_modules/*
+
+dibr3.com/BUILD_GUIDE.md
+dibr3.com/build-stats.json
+dibr3.com/output/*
+dibr3.com/package-lock.json
