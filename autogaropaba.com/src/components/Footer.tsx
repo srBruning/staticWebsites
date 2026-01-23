@@ -1,5 +1,5 @@
 import { Facebook, Instagram, Mail, Phone } from 'lucide-react';
-import logo from 'figma:asset/logo.png';
+import logo from 'figma:asset/logo.webp';
 
 export function Footer() {
   const currentYear = new Date().getFullYear();

@@ -30,12 +30,7 @@ const garopabaImages = [
     '/assets/foto-garopaba-sc_por_ivan-cheremisin-qnU5k4fLpd4-unsplash.jpg',
     '/assets/foto-garopaba-sc_por_ivan-cheremisin-ihdcAg7MVrM-unsplash.jpg',
     '/assets/foto-garopaba-sc_por_ivan-cheremisin-4o4z--__Q2o-unsplash.jpg',
-    '/assets/foto-garopaba-sc_por_claudia-back-83Fr00tILOg-unsplash.jpg',
-    '/assets/foto-garopaba-sc_por_diego-bruning-05.jpg',
-    '/assets/foto-garopaba-sc_por_diego-bruning-04.jpg',
-    '/assets/foto-garopaba-sc_por_diego-bruning-03.jpg',
-    '/assets/foto-garopaba-sc_por_diego-bruning-02.jpg',
-    '/assets/foto-garopaba-sc_por_diego-bruning-01.jpg'
+    '/assets/foto-garopaba-sc_por_claudia-back-83Fr00tILOg-unsplash.jpg'
 ];
 
 // Gerar links de preload para as primeiras 4 imagens (otimização de performance)
@@ -53,7 +48,7 @@ const schemaMarkup = `    <!-- Schema Markup - Organization -->
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
       "name": "Bruning Recuperadora e Estética Automotiva",
-      "image": "/assets/photo-capa-02.jpeg",
+      "image": "/assets/photo-capa-02.webp",
       "description": "Especialista em funilaria, pintura automotiva e estética automotiva em Garopaba",
       "address": {
         "@type": "PostalAddress",

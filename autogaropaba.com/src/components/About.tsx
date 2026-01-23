@@ -33,7 +33,7 @@ export function About() {
           <div className="relative">
             <div className="absolute inset-0 bg-red-600/20 rounded-lg transform translate-x-4 translate-y-4"></div>
             <ImageWithFallback
-              src="/assets/photo-about.jpeg"
+              src="/assets/photo-about.webp"
               alt="Estética Automotiva"
               className="relative rounded-lg w-full h-[500px] object-cover"
             />

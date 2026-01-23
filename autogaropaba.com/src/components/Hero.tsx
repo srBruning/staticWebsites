@@ -1,6 +1,6 @@
 import { Phone } from 'lucide-react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
-import logo from 'figma:asset/logo.png';
+import logo from 'figma:asset/logo.webp';
 
 export function Hero() {
   return (
@@ -8,7 +8,7 @@ export function Hero() {
       {/* Background Image with Overlay */}
       <div className="absolute inset-0">
         <ImageWithFallback
-          src="/assets/photo-capa-02.jpeg"
+          src="/assets/photo-capa-02.webp"
           alt="Funilaria Automotiva"
           className="w-full h-full object-cover"
         />

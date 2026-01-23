@@ -8,13 +8,13 @@
     
     <image:image>
       <image:loc>https://autogaropaba.com//assets/foto-garopaba-sc_por_raul-rodrigues-zeferino-m5J0rk_4TeA-unsplash.jpg</image:loc>
-      <image:title>Garopaba ao Pôr do Sol</image:title>
-      <image:caption>Praia de Garopaba ao pôr do sol - Fotografia de Raul Rodrigues Zeferino</image:caption>
+      <image:title>Praia da ferrugem</image:title>
+      <image:caption>Vista de uma praia do alto de uma colina - Fotografia de Raul Rodrigues Zeferino</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://autogaropaba.com//assets/foto-garopaba-sc_por_pedro-kummel-VSwFHRUg8aU-unsplash.jpg</image:loc>
-      <image:title>Praia da Ferrugem</image:title>
-      <image:caption>Vista panorâmica da Praia da Ferrugem em Garopaba - Fotografia de Pedro Kummel</image:caption>
+      <image:title>Praia Central</image:title>
+      <image:caption>Vista panorâmica da Praia Central em Garopaba - Fotografia de Pedro Kummel</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://autogaropaba.com//assets/foto-garopaba-sc_por_pedro-kummel-ryGu_SPR1rs-unsplash.jpg</image:loc>
@@ -23,18 +23,18 @@
     </image:image>
     <image:image>
       <image:loc>https://autogaropaba.com//assets/foto-garopaba-sc_por_paulo-freitas-SqZuDwGOQFY-unsplash.jpg</image:loc>
-      <image:title>Centro Histórico</image:title>
-      <image:caption>Centro histórico de Garopaba - Fotografia de Paulo Freitas</image:caption>
+      <image:title>Barcos na Água</image:title>
+      <image:caption>Barcos na agua em Garopaba- Fotografia de Paulo Freitas</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://autogaropaba.com//assets/foto-garopaba-sc_por_ivan-cheremisin-qnU5k4fLpd4-unsplash.jpg</image:loc>
-      <image:title>Trilhas Ecológicas</image:title>
-      <image:caption>Trilhas ecológicas de Garopaba - Fotografia de Ivan Cheremisin</image:caption>
+      <image:title>Um pequeno barco</image:title>
+      <image:caption>Um pequeno barco em um corpo de água em Garopaba - Fotografia de Ivan Cheremisin</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://autogaropaba.com//assets/foto-garopaba-sc_por_ivan-cheremisin-ihdcAg7MVrM-unsplash.jpg</image:loc>
-      <image:title>Lagoa de Garopaba</image:title>
-      <image:caption>Lagoa de Garopaba com vegetação nativa - Fotografia de Ivan Cheremisin</image:caption>
+      <image:title>Docas de pesca e igreja histórica de Garopaba</image:title>
+      <image:caption>Docas de pesca e igreja histórica de Garopaba- Fotografia de Ivan Cheremisin</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://autogaropaba.com//assets/foto-garopaba-sc_por_ivan-cheremisin-4o4z--__Q2o-unsplash.jpg</image:loc>
@@ -43,33 +43,8 @@
     </image:image>
     <image:image>
       <image:loc>https://autogaropaba.com//assets/foto-garopaba-sc_por_claudia-back-83Fr00tILOg-unsplash.jpg</image:loc>
-      <image:title>Praia com Ondas</image:title>
-      <image:caption>Praia com ondas em Garopaba SC - Fotografia de Claudia Back</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://autogaropaba.com//assets/foto-garopaba-sc_por_diego-bruning-05.jpg</image:loc>
-      <image:title>Garopaba 05</image:title>
-      <image:caption>Garopaba - Fotografia de Diego Bruning</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://autogaropaba.com//assets/foto-garopaba-sc_por_diego-bruning-04.jpg</image:loc>
-      <image:title>Garopaba 04</image:title>
-      <image:caption>Garopaba - Fotografia de Diego Bruning</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://autogaropaba.com//assets/foto-garopaba-sc_por_diego-bruning-03.jpg</image:loc>
-      <image:title>Garopaba 03</image:title>
-      <image:caption>Garopaba - Fotografia de Diego Bruning</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://autogaropaba.com//assets/foto-garopaba-sc_por_diego-bruning-02.jpg</image:loc>
-      <image:title>Garopaba 02</image:title>
-      <image:caption>Garopaba - Fotografia de Diego Bruning</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://autogaropaba.com//assets/foto-garopaba-sc_por_diego-bruning-01.jpg</image:loc>
-      <image:title>Garopaba 01</image:title>
-      <image:caption>Garopaba - Fotografia de Diego Bruning</image:caption>
+      <image:title>Dunas de Siriu</image:title>
+      <image:caption>Fotografia de paisagem de dunas de areia - Fotografia de Claudia Back</image:caption>
     </image:image>
   </url>
   <url>

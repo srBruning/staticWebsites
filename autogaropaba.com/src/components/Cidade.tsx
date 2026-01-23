@@ -108,7 +108,7 @@ export function Cidade() {
                                         src={image.src}
                                         alt={image.alt}
                                         title={image.title}
-                                        className="w-full h-full object-cover rounded-lg cursor-pointer hover:opacity-90 transition-opacity"
+
                                         loading="lazy"
                                         onClick={() => setSelectedImageIndex(index)}
                                     />
@@ -170,7 +170,7 @@ export function Cidade() {
                         border: 'none',
                         borderRadius: '8px',
                         backgroundColor: 'transparent',
-                        overflow: 'visible'
+                        overflowY: 'auto'
                     }
                 }}
             >
@@ -189,7 +189,11 @@ export function Cidade() {
                                 src={garopabaImages[selectedImageIndex].src}
                                 alt={garopabaImages[selectedImageIndex].alt}
                                 title={garopabaImages[selectedImageIndex].title}
-                                className="w-auto h-[85vh] object-contain rounded-lg"
+                                style={{
+                                    maxWidth: '90vw',
+                                    maxHeight: '85vh',
+                                    objectFit: 'contain'
+                                }}
                             />
 
                             <p className="text-center text-gray-300 mt-6 text-lg font-semibold">
