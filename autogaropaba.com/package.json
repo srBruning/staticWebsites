@@ -61,11 +61,11 @@
       },
       "scripts": {
             "dev": "vite",
-            "build": "vite build",
+            "build": "vite build && node scripts/optimize-css.mjs",
             "prerender": "node scripts/prerender.mjs",
             "preview": "vite preview",
             "serve:build": "cd build && python3 -m http.server 8000",
             "serve:build:win": "cd build && python -m http.server 8000",
-            "build:seo": "cross-env NODE_ENV=production node scripts/generate-seo-files.mjs && vite build && npm run prerender"
+            "build:seo": "cross-env NODE_ENV=production node scripts/generate-seo-files.mjs && vite build && node scripts/optimize-css.mjs && npm run prerender"
       }
 }
