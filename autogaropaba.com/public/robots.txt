@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://autogaropaba.vercel.app//sitemap.xml
+Sitemap: https://autogaropaba.com//sitemap.xml
