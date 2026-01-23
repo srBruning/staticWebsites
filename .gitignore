@@ -1,4 +1,6 @@
 **/node_modules/*
+**/.env
+**/build/**
 
 dibr3.com/BUILD_GUIDE.md
 dibr3.com/build-stats.json

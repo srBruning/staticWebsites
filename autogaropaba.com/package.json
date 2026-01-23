@@ -54,17 +54,18 @@
             "@types/react-dom": "^19.2.3",
             "@types/react-modal": "^3.16.3",
             "@vitejs/plugin-react-swc": "^3.10.2",
+            "cross-env": "^10.1.0",
+            "dotenv": "^17.2.3",
             "terser": "^5.46.0",
             "vite": "6.3.5"
       },
       "scripts": {
             "dev": "vite",
             "build": "vite build",
-            "build:seo": "vite build && npm run prerender && npm run sitemap",
             "prerender": "node scripts/prerender.mjs",
             "preview": "vite preview",
             "serve:build": "cd build && python3 -m http.server 8000",
             "serve:build:win": "cd build && python -m http.server 8000",
-            "sitemap": "echo 'Sitemap gerado em public/sitemap.xml'"
+            "build:seo": "cross-env NODE_ENV=production node scripts/generate-seo-files.mjs && vite build && npm run prerender"
       }
 }

@@ -1,9 +1,21 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import dotenv from 'dotenv';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+
+// Carregar variáveis de ambiente
+const envPath = process.env.NODE_ENV === 'production' && fs.existsSync(path.join(__dirname, '..', '.env.production'))
+  ? path.join(__dirname, '..', '.env.production')
+  : path.join(__dirname, '..', '.env');
+
+dotenv.config({ path: envPath });
+console.log(`Loading environment variables from: ${envPath}`);
+
+const siteUrl = process.env.VITE_SITE_URL || 'https://autogaropaba.com';
+console.log('Using site URL for prerender:', siteUrl);
 
 // Caminho do arquivo HTML gerado pelo Vite
 const buildDir = path.join(__dirname, '..', 'build');
@@ -52,7 +64,7 @@ const schemaMarkup = `    <!-- Schema Markup - Organization -->
         "addressCountry": "BR"
       },
       "telephone": "+55 54 98415-1823",
-      "url": "https://autogaropaba.com",
+      "url": "${siteUrl}",
       "sameAs": [
         "https://www.instagram.com/bruningautorecuperadora/",
         "https://www.instagram.com/bruningautorecuperadora/"

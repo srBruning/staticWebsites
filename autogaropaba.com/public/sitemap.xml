@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://autogaropaba.com</loc>
-    <lastmod>2026-01-21</lastmod>
-    <changefreq>weekly</changefreq>
+    <loc>https://autogaropaba.vercel.app/</loc>
+    <lastmod>2024-07-27</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://autogaropaba.com#servicos</loc>
-    <lastmod>2026-01-21</lastmod>
+    <loc>https://autogaropaba.vercel.app/#servicos</loc>
+    <lastmod>2024-07-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://autogaropaba.com#sobre</loc>
-    <lastmod>2026-01-21</lastmod>
+    <loc>https://autogaropaba.vercel.app/#sobre</loc>
+    <lastmod>2024-07-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://autogaropaba.com#garopaba</loc>
-    <lastmod>2026-01-21</lastmod>
+    <loc>https://autogaropaba.vercel.app/#garopaba</loc>
+    <lastmod>2024-07-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://autogaropaba.com#contato</loc>
-    <lastmod>2026-01-21</lastmod>
+    <loc>https://autogaropaba.vercel.app/#contato</loc>
+    <lastmod>2024-07-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
