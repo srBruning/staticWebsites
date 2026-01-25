@@ -22,7 +22,7 @@ async function optimizeCssLoading() {
 
     // 1. Adiciona uma tag de preload para o CSS.
     // Opcional, mas bom para performance: o navegador começa a baixar antes.
-    const preloadLink = `<link rel="preload" href="${cssUrl}" as="style">`;
+    const preloadLink = `<link rel="preload" href="${cssUrl}" as="style" crossorigin="anonymous">`;
 
     // 2. Modifica o link original para carregar de forma assíncrona
     const asyncLink = originalLink.replace('rel="stylesheet"', 'rel="stylesheet" media="print" onload="this.media=\'all\'"');
