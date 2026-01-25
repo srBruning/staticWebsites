@@ -85,7 +85,7 @@ const schemaMarkup = `    <!-- Schema Markup - Organization -->
 // Injetar conteúdo noscript para crawlers
 const noscriptContent = `    
     <!-- Conteúdo estruturado visível para crawlers -->
-    <noscript>
+    <noscript id="crawlers">
       <h1>Bruning - Recuperadora e Estética Automotiva</h1>
       <p>Especializada em funilaria, pintura automotiva, estética e restauração de veículos em Garopaba, Santa Catarina.</p>
       
@@ -119,7 +119,7 @@ if (!htmlContent.includes('rel="preload" as="image"')) {
 }
 
 // Injetar noscript antes da tag </body>
-if (!htmlContent.includes('<noscript>')) {
+if (!htmlContent.includes('<noscript id="crawlers">')) {
   htmlContent = htmlContent.replace('</body>', noscriptContent + '\n  </body>');
 }
 
