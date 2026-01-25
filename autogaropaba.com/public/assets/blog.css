@@ -1,0 +1,450 @@
+/* --- Blog Clean - Estilos independentes --- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --blog-bg: #fafafa;
+  --blog-surface: #ffffff;
+  --blog-text: #1a1a1a;
+  --blog-text-muted: #6b7280;
+  --blog-accent: #2563eb;
+  --blog-accent-hover: #1d4ed8;
+  --blog-border: #e5e7eb;
+  --blog-radius: 8px;
+  --blog-font: "Source Sans 3", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --blog-max: 720px;
+}
+
+body {
+  margin: 0;
+  font-family: var(--blog-font);
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  color: var(--blog-text);
+  background: var(--blog-bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* --- Header --- */
+.blog-header {
+  background: var(--blog-surface);
+  border-bottom: 1px solid var(--blog-border);
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.blog-header a {
+  color: var(--blog-text);
+  text-decoration: none;
+}
+
+.blog-header .blog-logo {
+  height: 2rem;
+  width: auto;
+  display: block;
+}
+
+.blog-back {
+  font-size: 0.9375rem;
+  color: var(--blog-text-muted);
+  transition: color 0.2s;
+}
+
+.blog-back:hover {
+  color: var(--blog-accent);
+}
+
+/* --- Container --- */
+.blog-container {
+  width: 100%;
+  max-width: var(--blog-max);
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem;
+}
+
+/* --- Index: lista de posts --- */
+.blog-title {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--blog-text);
+  margin: 0 0 1.75rem;
+  letter-spacing: -0.02em;
+}
+
+.blog-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.blog-card {
+  background: var(--blog-surface);
+  border: 1px solid var(--blog-border);
+  border-radius: var(--blog-radius);
+  padding: 1.25rem 1.5rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  overflow: hidden;
+}
+
+.blog-card:has(.blog-card-cover) {
+  padding: 0;
+}
+
+.blog-card:hover {
+  border-color: #d1d5db;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.blog-card-link {
+  color: var(--blog-text);
+  text-decoration: none;
+  display: block;
+  transition: color 0.2s;
+}
+
+.blog-card-link:hover {
+  color: var(--blog-accent);
+}
+
+.blog-card-cover {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+  border-radius: var(--blog-radius) var(--blog-radius) 0 0;
+  border-bottom: 1px solid var(--blog-border);
+}
+
+.blog-card:not(:has(.blog-card-cover)) .blog-card-link {
+  padding: 0;
+}
+
+.blog-card:has(.blog-card-cover) .blog-card-link {
+  padding: 1rem 1.5rem 0;
+}
+
+.blog-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  padding: 0.5rem 0 0;
+}
+
+.blog-card:has(.blog-card-cover) .blog-card-tags {
+  padding: 0.5rem 1.5rem 1rem;
+}
+
+.blog-card-date {
+  font-size: 0.8125rem;
+  color: var(--blog-text-muted);
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.blog-card-title {
+  font-size: 1.125rem;
+  font-weight: 500;
+}
+
+.blog-tag {
+  font-size: 0.75rem;
+  color: var(--blog-text-muted);
+  background: var(--blog-bg);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+}
+
+.blog-cover {
+  width: 100%;
+  max-height: 320px;
+  object-fit: cover;
+  border-radius: var(--blog-radius);
+  margin-bottom: 1.25rem;
+  display: block;
+}
+
+.blog-article-meta {
+  margin-bottom: 1rem;
+}
+
+.blog-article-meta:empty {
+  display: none;
+}
+
+.blog-article-date {
+  font-size: 0.9375rem;
+  color: var(--blog-text-muted);
+}
+
+.blog-article-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-bottom: 1.5rem;
+}
+
+.blog-article-tags:empty {
+  display: none;
+}
+
+.blog-article-tags .blog-tag {
+  font-size: 0.8125rem;
+}
+
+/* --- Post: artigo --- */
+.blog-article {
+  font-size: 1.0625rem;
+  line-height: 1.75;
+}
+
+.blog-article h1 {
+  font-size: 1.875rem;
+  font-weight: 600;
+  line-height: 1.3;
+  margin: 0 0 1.5rem;
+  letter-spacing: -0.02em;
+  color: var(--blog-text);
+}
+
+.blog-article h2 {
+  font-size: 1.375rem;
+  font-weight: 600;
+  margin: 2.25rem 0 0.75rem;
+  color: var(--blog-text);
+}
+
+.blog-article h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin: 1.75rem 0 0.5rem;
+}
+
+.blog-article p {
+  margin: 0 0 1rem;
+}
+
+.blog-article ul,
+.blog-article ol {
+  margin: 0 0 1rem;
+  padding-left: 1.5rem;
+}
+
+.blog-article ul {
+  list-style: disc;
+}
+
+.blog-article ol {
+  list-style: decimal;
+}
+
+.blog-article li {
+  margin-bottom: 0.35rem;
+}
+
+.blog-article li:last-child {
+  margin-bottom: 0;
+}
+
+.blog-article hr {
+  border: none;
+  border-top: 1px solid var(--blog-border);
+  margin: 2rem 0;
+}
+
+.blog-article img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--blog-radius);
+  margin: 1.5rem 0;
+  display: block;
+}
+
+.blog-article a {
+  color: var(--blog-accent);
+  text-decoration: none;
+}
+
+.blog-article a:hover {
+  text-decoration: underline;
+}
+
+/* IDs dos headings (anchor do marked) - esconder para não quebrar layout */
+.blog-article h1[id],
+.blog-article h2[id],
+.blog-article h3[id] {
+  scroll-margin-top: 1rem;
+}
+
+@media (min-width: 640px) {
+  .blog-container {
+    padding: 3rem 2rem;
+  }
+
+  .blog-title {
+    font-size: 2rem;
+  }
+
+  .blog-article h1 {
+    font-size: 2.25rem;
+  }
+
+  .blog-article h2 {
+    font-size: 1.5rem;
+  }
+}
+
+
+
+
+
+/* --- Variáveis de Cores (Baseado na marca Bruning) --- */
+:root {
+  --footer-bg: #000000;
+  --footer-border: #27272a; /* Zinc 800 */
+  --footer-text-title: #ffffff;
+  --footer-text-body: #9ca3af; /* Gray 400 */
+  --footer-accent: #ef4444; /* Red 500 - Cor da marca */
+  --footer-accent-hover: #dc2626;
+}
+
+/* --- Estrutura Principal do Footer --- */
+footer {
+  background-color: var(--footer-bg);
+  border-top: 1px solid var(--footer-border);
+  padding-top: 3rem;
+  padding-bottom: 2rem;
+  font-family: 'Source Sans 3', sans-serif;
+  color: var(--footer-text-body);
+}
+
+/* Container Centralizado */
+footer .max-w-7xl {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* --- Layout de Grid (Colunas) --- */
+footer .grid {
+  display: grid;
+  grid-template-columns: 1fr; /* Mobile: 1 coluna */
+  gap: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+/* Desktop: 3 colunas */
+@media (min-width: 768px) {
+  footer .grid {
+      grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* --- Tipografia e Elementos --- */
+footer h3, 
+footer h4 {
+  color: var(--footer-text-title);
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+footer h3 {
+  font-size: 1.5rem; /* 24px */
+  line-height: 2rem;
+  margin: 0; /* Ajuste para alinhar com o logo */
+}
+
+footer h4 {
+  font-size: 1.125rem; /* 18px */
+}
+
+footer p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 0.5rem;
+}
+
+/* --- Logo Section --- */
+footer .flex.items-center {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+footer img {
+  display: block;
+  max-width: 100%;
+}
+
+/* --- Links e Listas --- */
+footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+footer ul li {
+  margin-bottom: 0.75rem;
+}
+
+footer a {
+  text-decoration: none;
+  color: var(--footer-text-body);
+  transition: color 0.2s ease;
+}
+
+footer a:hover {
+  color: var(--footer-accent);
+}
+
+/* --- Ícones Sociais (Círculos) --- */
+footer .w-10 {
+  width: 2.5rem;  /* 40px */
+  height: 2.5rem; /* 40px */
+  background-color: #18181b; /* Zinc 900 */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+}
+
+footer .w-10:hover {
+  background-color: var(--footer-accent-hover);
+}
+
+/* Ícones SVG */
+footer svg {
+  width: 1.25rem;
+  height: 1.25rem;
+  stroke: currentColor;
+}
+
+/* Botão Social SVG específico */
+footer .w-10 svg {
+  color: #fff;
+}
+
+/* Telefone */
+footer .lucide-phone {
+  margin-right: 0.5rem;
+}
+
+/* --- Copyright Bar (Parte inferior) --- */
+footer .border-t {
+  border-top: 1px solid var(--footer-border);
+  padding-top: 2rem;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+footer .border-t p {
+  font-size: 0.875rem; /* text-sm */
+  color: #71717a; /* Zinc 500 */
+}
