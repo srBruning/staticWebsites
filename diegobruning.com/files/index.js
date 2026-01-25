@@ -9,7 +9,7 @@ window.addEventListener('error', (e) => {
 if ('requestIdleCallback' in window) {
   requestIdleCallback(() => {
     // Preload images quando browser estiver livre
-    const images = ['./files/diego_bruning_02.jpeg', './files/diego_bruning_01.jpeg'];
+    const images = ['./files/diego_bruning_02.webp', './files/diego_bruning_01.webp'];
     images.forEach(src => {
       const link = document.createElement('link');
       link.rel = 'prefetch';
