@@ -109,7 +109,7 @@ postFolders.forEach(slug => {
     cover,
     tags,
     tagsHtml,
-    url: `${slug}.html`
+    url: `/blog/${slug}.html`
   });
 });
 
