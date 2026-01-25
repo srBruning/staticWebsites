@@ -1,5 +1,7 @@
 import { Facebook, Instagram, Mail, Phone } from 'lucide-react';
-import logo from 'figma:asset/logo.webp';
+import logoDefault from '/src/assets/logo.webp';
+import logo240 from '/src/assets/logo_240x312.webp';
+import logo350 from '/src/assets/logo_350x455.webp';
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -12,9 +14,14 @@ export function Footer() {
           <div>
             <div className="flex items-center gap-3 mb-4">
               <img
-                src={logo}
+                src={logoDefault}
+                srcSet={`${logo240} 240w, ${logo350} 350w, ${logoDefault} 500w`}
+                sizes="48px"
                 alt="Bruning Logo"
-                className="w-12 h-12"
+                className="w-12 h-auto"
+                loading="lazy"
+                width="350"
+                height="455"
               />
               <h3 className="text-2xl font-bold text-white">Bruning</h3>
             </div>

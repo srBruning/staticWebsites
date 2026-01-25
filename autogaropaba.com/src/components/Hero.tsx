@@ -1,6 +1,8 @@
 import { Phone } from 'lucide-react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
-import logo from 'figma:asset/logo.webp';
+import logoDefault from '/src/assets/logo.webp';
+import logo240 from '/src/assets/logo_240x312.webp';
+import logo350 from '/src/assets/logo_350x455.webp';
 
 export function Hero() {
   return (
@@ -19,9 +21,14 @@ export function Hero() {
       <div className="relative h-full flex flex-col items-center justify-center px-4 text-center">
         <div className="max-w-4xl">
           <img
-            src={logo}
+            src={logoDefault}
+            srcSet={`${logo240} 240w, ${logo350} 350w, ${logoDefault} 500w`}
+            sizes="(min-width: 768px) 160px, 128px"
             alt="Bruning Logo"
-            className="w-32 h-32 md:w-40 md:h-40 mx-auto mb-6 drop-shadow-2xl"
+            className="w-32 md:w-40 h-auto mx-auto mb-6 drop-shadow-2xl"
+            loading="lazy"
+            width="350"
+            height="455"
           />
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-4">
             Bruning
