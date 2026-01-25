@@ -52,6 +52,11 @@ export function Footer() {
                   Contato
                 </a>
               </li>
+              <li>
+                <a href="/blog" className="text-gray-400 hover:text-red-500 transition-colors">
+                  Blog
+                </a>
+              </li>
             </ul>
           </div>
 
