@@ -237,6 +237,16 @@ async function build() {
       log(`📝 Escrevendo ${LIVROS_OUTPUT}...`, 'yellow');
     }
     
+    // Copiar sitemape.xml se existir
+    const SITEMAPE_INPUT = path.join(__dirname, 'sitemap.xml');
+    const SITEMAPE_OUTPUT = path.join(OUTPUT_DIR, 'sitemap.xml');
+    if (fs.existsSync(SITEMAPE_INPUT)) {
+      let sitemapHtml = fs.readFileSync(SITEMAPE_INPUT, 'utf-8');
+    
+      fs.writeFileSync(SITEMAPE_OUTPUT, sitemapHtml, 'utf-8');
+      log(`📝 Escrevendo ${SITEMAPE_OUTPUT}...`, 'yellow');
+    }
+    
     // Calcula estatísticas
     const stats = getStats(originalHTML, html);
     
