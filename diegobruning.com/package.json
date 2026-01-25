@@ -9,9 +9,9 @@
     "build": "node build.js",
     "build:bash": "bash build.sh",
     "dev": "echo 'Use um servidor HTTP local para desenvolver'",
-    "serve": "python3 -m http.server 8005 --directory output",
-    "serve:node": "npx http-server output -p 8005 -c-1",
-    "clean": "rm -rf output index.html index.backup.html build-stats.json",
+    "serve": "python3 -m http.server 8005 --directory build",
+    "serve:node": "npx http-server build -p 8005 -c-1",
+    "clean": "rm -rf build index.html index.backup.html build-stats.json",
     "validate": "node validate.js"
   },
   "keywords": [
@@ -27,6 +27,6 @@
     "html-minifier": "^4.0.0"
   },
   "engines": {
-    "node": ">=14.0.0"
+    "node": ">=20.0.0"
   }
 }

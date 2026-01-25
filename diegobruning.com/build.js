@@ -14,7 +14,7 @@ const __dirname = path.dirname(__filename);
 
 // Configurações
 const INPUT_FILE = path.join(__dirname, 'index-formatted.html');
-const OUTPUT_DIR = path.join(__dirname, 'output');
+const OUTPUT_DIR = path.join(__dirname, 'build');
 const OUTPUT_FILE = path.join(OUTPUT_DIR, 'index.html');
 const BACKUP_FILE = path.join(OUTPUT_DIR, 'index.backup.html');
 
