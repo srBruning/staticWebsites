@@ -7,9 +7,51 @@ import About from '../components/About.astro';
 import Contact from '../components/Contact.astro';
 import Cidade from '../components/Cidade.astro';
 import Footer from '../components/Footer.astro';
+
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Autogaropaba",
+  "image": "https://autogaropaba.com/logo.png",
+  "description": "Serviços especializados de funilaria, pintura automotiva, estética e proteção de pintura em Garopaba",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Garopaba",
+    "addressLocality": "Garopaba",
+    "addressRegion": "SC",
+    "postalCode": "88680-000",
+    "addressCountry": "BR"
+  },
+  "sameAs": [
+    "https://www.instagram.com/autogaropaba"
+  ],
+  "priceRange": "$$"
+};
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://autogaropaba.com"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Serviços",
+      "item": "https://autogaropaba.com/#servicos"
+    }
+  ]
+};
 ---
 
-<Layout title="Autogaropaba - Funilaria e Estética Automotiva">
+<Layout title="Autogaropaba - Funilaria e Estética Automotiva em Garopaba" description="Serviços especializados de funilaria, pintura profissional, proteção de pintura, restauração veicular e higienização em Garopaba. Qualidade garantida.">
+  <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+  
   <Navbar />
   <main>
     <Hero />
