@@ -52,6 +52,37 @@
     <lastmod>2024-07-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    
+    <image:image>
+      <image:loc>https://autogaropaba.com//assets/s0-funilaria.webp</image:loc>
+      <image:title>Funilaria Automotiva</image:title>
+      <image:caption>Serviço de Funilaria Automotiva - Bruning Recuperadora</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://autogaropaba.com//assets/s1-pintura_automotiva.webp</image:loc>
+      <image:title>Pintura Automotiva Profissional</image:title>
+      <image:caption>Serviço de Pintura Automotiva Profissional - Bruning</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://autogaropaba.com//assets/s2-estetica_automotiva.webp</image:loc>
+      <image:title>Estética Automotiva</image:title>
+      <image:caption>Serviço de Estética Automotiva - Bruning Recuperadora</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://autogaropaba.com//assets/s3-protecao_pintura.webp</image:loc>
+      <image:title>Proteção de Pintura e Película</image:title>
+      <image:caption>Serviço de Proteção de Pintura e Película - Bruning</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://autogaropaba.com//assets/s4-restauracao.webp</image:loc>
+      <image:title>Restauração Veicular Completa</image:title>
+      <image:caption>Serviço de Restauração Veicular Completa - Bruning</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://autogaropaba.com//assets/s5-Higienizacao.webp</image:loc>
+      <image:title>Higienização e Limpeza Profissional</image:title>
+      <image:caption>Serviço de Higienização e Limpeza Profissional - Bruning</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://autogaropaba.com/#sobre</loc>

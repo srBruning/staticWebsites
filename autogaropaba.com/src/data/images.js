@@ -38,5 +38,38 @@ export const garopabaImages = [
         src: '/assets/foto-garopaba-sc_por_claudia-back-83Fr00tILOg-unsplash.jpg',
         alt: 'Fotografia de paisagem de dunas de areia - Fotografia de Claudia Back',
         title: 'Dunas de Siriu'
-    } 
+    }
+];
+
+export const servicesImages = [
+    {
+        src: '/assets/s0-funilaria.webp',
+        alt: 'Serviço de Funilaria Automotiva - Bruning Recuperadora',
+        title: 'Funilaria Automotiva'
+    },
+    {
+        src: '/assets/s1-pintura_automotiva.webp',
+        alt: 'Serviço de Pintura Automotiva Profissional - Bruning',
+        title: 'Pintura Automotiva Profissional'
+    },
+    {
+        src: '/assets/s2-estetica_automotiva.webp',
+        alt: 'Serviço de Estética Automotiva - Bruning Recuperadora',
+        title: 'Estética Automotiva'
+    },
+    {
+        src: '/assets/s3-protecao_pintura.webp',
+        alt: 'Serviço de Proteção de Pintura e Película - Bruning',
+        title: 'Proteção de Pintura e Película'
+    },
+    {
+        src: '/assets/s4-restauracao.webp',
+        alt: 'Serviço de Restauração Veicular Completa - Bruning',
+        title: 'Restauração Veicular Completa'
+    },
+    {
+        src: '/assets/s5-Higienizacao.webp',
+        alt: 'Serviço de Higienização e Limpeza Profissional - Bruning',
+        title: 'Higienização e Limpeza Profissional'
+    }
 ];

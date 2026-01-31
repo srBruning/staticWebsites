@@ -4,7 +4,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import dotenv from 'dotenv';
 
-import { garopabaImages } from '../src/data/images.js';
+import { garopabaImages, servicesImages } from '../src/data/images.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -29,11 +29,17 @@ Sitemap: ${siteUrl}/sitemap.xml
 const sitemapContent = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
-    <loc>${siteUrl}</loc>
+    <loc>${siteUrl}#sobre</loc>
     <lastmod>2024-07-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
-    ${garopabaImages.map(image => `
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>${siteUrl}#servicos</loc>
+    <lastmod>2024-07-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    ${servicesImages.map(image => `
     <image:image>
       <image:loc>${siteUrl}${image.src}</image:loc>
       <image:title>${image.title}</image:title>
@@ -41,28 +47,22 @@ const sitemapContent = `<?xml version="1.0" encoding="UTF-8"?>
     </image:image>`).join('')}
   </url>
   <url>
-    <loc>${siteUrl}#servicos</loc>
-    <lastmod>2024-07-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>${siteUrl}#sobre</loc>
-    <lastmod>2024-07-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>${siteUrl}#garopaba</loc>
     <lastmod>2024-07-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
+    <priority>1.0</priority>
+    </url>
+    <url>
     <loc>${siteUrl}#contato</loc>
     <lastmod>2024-07-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    ${garopabaImages.map(image => `
+    <image:image>
+      <image:loc>${siteUrl}${image.src}</image:loc>
+      <image:title>${image.title}</image:title>
+      <image:caption>${image.alt}</image:caption>
+    </image:image>`).join('')}
   </url>
   <url>
     <loc>${siteUrl}blog</loc>

@@ -33,15 +33,34 @@ const garopabaImages = [
     '/assets/foto-garopaba-sc_por_claudia-back-83Fr00tILOg-unsplash.jpg'
 ];
 
-// Gerar links de preload para as primeiras 4 imagens (otimização de performance)
-const preloadLinks = garopabaImages.slice(0, 4)
+// Imagens dos serviços para preload
+const servicesImages = [
+    '/assets/s0-funilaria.webp',
+    '/assets/s1-pintura_automotiva.webp',
+    '/assets/s2-estetica_automotiva.webp',
+    '/assets/s3-protecao_pintura.webp',
+    '/assets/s4-restauracao.webp',
+    '/assets/s5-Higienizacao.webp'
+];
+
+// Gerar links de preload para as primeiras 3 imagens de serviços e de Garopaba  (otimização de performance)
+const servicesPreload = servicesImages.slice(0, 3)
     .map(img => `    <link rel="preload" as="image" href="${img}" />`)
     .join('\n');
+
+const garopabaPreload = garopabaImages.slice(0, 3)
+    .map(img => `    <link rel="preload" as="image" href="${img}" />`)
+    .join('\n');
+
+
+const preloadLinks = garopabaPreload + '\n' + servicesPreload;
 
 // Ler o HTML gerado pelo Vite
 let htmlContent = fs.readFileSync(indexPath, 'utf-8');
 
 // Injetar Schema Markup se ainda não estiver presente
+const canonicalLink = `    <link rel="canonical" href="https://autogaropaba.dibr3.com/" />`;
+
 const schemaMarkup = `    <!-- Schema Markup - Organization -->
     <script type="application/ld+json">
     {
@@ -61,7 +80,6 @@ const schemaMarkup = `    <!-- Schema Markup - Organization -->
       "telephone": "+55 54 98415-1823",
       "url": "${siteUrl}",
       "sameAs": [
-        "https://www.instagram.com/bruningautorecuperadora/",
         "https://www.instagram.com/bruningautorecuperadora/"
       ]
     }
@@ -110,6 +128,11 @@ const noscriptContent = `
 if (!htmlContent.includes('@context')) {
   // Injetar antes da tag </head>
   htmlContent = htmlContent.replace('</head>', schemaMarkup + '\n  </head>');
+}
+
+// Injetar canonical link se ainda não estiver presente
+if (!htmlContent.includes('rel="canonical"')) {
+  htmlContent = htmlContent.replace('</head>', canonicalLink + '\n  </head>');
 }
 
 // Injetar preload links se ainda não estiverem presentes
