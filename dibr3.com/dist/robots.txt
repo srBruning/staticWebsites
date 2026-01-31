@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Sitemap (se você gerar um sitemap, coloque a URL aqui)
+# Sitemap: https://dibr3.com/sitemap.xml
