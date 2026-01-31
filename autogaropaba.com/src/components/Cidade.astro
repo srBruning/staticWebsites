@@ -1,0 +1,31 @@
+---
+import { garopabaImages } from '../data/images.js';
+---
+<section id="garopaba" class="py-20 bg-zinc-950">
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">Garopaba: Nossa Casa, Seu Destino</h2>
+      <div class="h-1 w-24 bg-red-600 mx-auto mb-6"></div>
+      <p class="text-xl text-gray-400">A Bruning tem orgulho de fazer parte da história de Garopaba, uma cidade encantadora do litoral catarinense. Aqui, tradição, natureza e hospitalidade se encontram para criar experiências inesquecíveis tanto para moradores quanto para visitantes.</p>
+      <p class="text-lg md:text-xl text-gray-300 mb-6">Garopaba é famosa por suas praias paradisíacas como a Praia da Ferrugem, Praia do Silveira e Praia de Garopaba, perfeitas para o surfe, banho de mar e momentos em família. O centro histórico, a Igreja Matriz, as trilhas ecológicas e a Lagoa de Garopaba também são pontos turísticos imperdíveis.</p>
+      <p class="text-lg md:text-xl text-gray-300 mb-8">Se você está de passagem ou mora na cidade, convidamos você a conhecer a Bruning. Somos apaixonados por Garopaba e dedicados a oferecer o melhor em funilaria e estética automotiva. Venha tomar um café conosco e descubra como podemos cuidar do seu carro enquanto você aproveita tudo o que Garopaba tem a oferecer!</p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-12">
+      {garopabaImages.map((img) => (
+        <figure class="rounded-lg overflow-hidden bg-zinc-900">
+          <a href={img.src} target="_blank" rel="noopener noreferrer">
+            <img src={img.src} alt={img.alt} title={img.title} loading="lazy" class="w-full h-56 object-cover" />
+          </a>
+          <figcaption class="p-4 text-gray-300 text-sm">{img.title}</figcaption>
+        </figure>
+      ))}
+    </div>
+
+    <div class="max-w-3xl mx-auto text-center">
+      <p class="text-lg md:text-xl text-gray-300 mb-6">Garopaba é famosa por suas praias paradisíacas como a Praia da Ferrugem e Praia do Silveira.</p>
+      <p class="text-lg md:text-xl text-gray-300 mb-8">Se você está de passagem ou mora na cidade, convidamos você a conhecer a Bruning.</p>
+      <span class="inline-block bg-red-600 text-white px-6 py-3 rounded-lg font-semibold shadow-lg hover:bg-red-700 transition">Esperamos por você em Garopaba!</span>
+    </div>
+  </div>
+</section>

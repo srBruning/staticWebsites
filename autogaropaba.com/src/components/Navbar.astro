@@ -1,0 +1,74 @@
+---
+---
+<nav class="bg-black/80 backdrop-blur-sm sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="flex items-center justify-between h-16">
+      <div class="flex items-center gap-3">
+        <a href="/" class="flex items-center gap-2">
+          <img src="/assets/logo.webp" alt="Bruning" class="w-10 h-auto" />
+          <span class="text-white font-bold">Bruning</span>
+        </a>
+      </div>
+      <div class="hidden md:flex items-center gap-6">
+        <a href="#servicos" class="text-gray-300 hover:text-white transition-colors">Serviços</a>
+        <a href="#sobre" class="text-gray-300 hover:text-white transition-colors">Sobre</a>
+        <a href="#contato" class="text-gray-300 hover:text-white transition-colors">Contato</a>
+        <a href="/blog" class="text-gray-300 hover:text-white transition-colors">Blog</a>
+      </div>
+      <div class="md:hidden">
+        <button id="mobile-menu-btn" class="text-gray-300 hover:text-white focus:outline-none" aria-label="Menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    
+    <!-- Menu Mobile -->
+    <div id="mobile-menu" class="hidden md:hidden max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+      <div class="px-2 pt-2 pb-3 space-y-1">
+        <a href="#servicos" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-black/50 transition-colors">Serviços</a>
+        <a href="#sobre" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-black/50 transition-colors">Sobre</a>
+        <a href="#contato" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-black/50 transition-colors">Contato</a>
+        <a href="/blog" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-black/50 transition-colors">Blog</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    if (menuBtn && mobileMenu) {
+      menuBtn.addEventListener('click', function() {
+        const isHidden = mobileMenu.classList.contains('hidden');
+        
+        if (isHidden) {
+          mobileMenu.classList.remove('hidden');
+          // Trigger animation
+          setTimeout(() => {
+            mobileMenu.style.maxHeight = mobileMenu.scrollHeight + 'px';
+          }, 10);
+        } else {
+          mobileMenu.style.maxHeight = '0';
+          setTimeout(() => {
+            mobileMenu.classList.add('hidden');
+          }, 300);
+        }
+      });
+      
+      // Fechar menu ao clicar em um link
+      const menuLinks = mobileMenu.querySelectorAll('a');
+      menuLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          mobileMenu.style.maxHeight = '0';
+          setTimeout(() => {
+            mobileMenu.classList.add('hidden');
+          }, 300);
+        });
+      });
+    }
+  });
+</script>

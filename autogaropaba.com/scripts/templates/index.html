@@ -13,12 +13,44 @@
 </head>
 <body>
     <header class="blog-header">
-        <a href="/blog">
+        <a href="/blog" class="blog-header-brand">
             <img src="/assets/logo.webp" alt="Logo" class="blog-logo"> 
-            Recuperadora Bruning / Blog
+            <span>Bruning / Blog</span>
         </a>
-        <a href="/" class="blog-back">Voltar para o site</a>
+        
+        <button class="blog-menu-toggle" id="menuToggle" aria-label="Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        
+        <nav class="blog-nav" id="blogNav">
+            <a href="/" class="blog-nav-item">Início</a>
+            <a href="/#servicos" class="blog-nav-item">Serviços</a>
+            <a href="/#sobre" class="blog-nav-item">Sobre</a>
+            <a href="/#contato" class="blog-nav-item">Contato</a>
+            <a href="/blog" class="blog-nav-item">Blog</a>
+            <a href="/" class="blog-nav-item blog-nav-back">Voltar para o site</a>
+        </nav>
     </header>
+    
+    <script>
+        const menuToggle = document.getElementById('menuToggle');
+        const blogNav = document.getElementById('blogNav');
+        
+        menuToggle.addEventListener('click', function() {
+            blogNav.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+        });
+        
+        // Fechar menu ao clicar em um link
+        document.querySelectorAll('.blog-nav-item').forEach(link => {
+            link.addEventListener('click', function() {
+                blogNav.classList.remove('active');
+                menuToggle.classList.remove('active');
+            });
+        });
+    </script>
     <main class="blog-container">
         <h1 class="blog-title">Últimas Postagens</h1>
         <div class="blog-list">

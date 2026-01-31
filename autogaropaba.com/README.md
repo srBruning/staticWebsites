@@ -75,10 +75,10 @@ cd autogaropaba.com
 # Instalar dependências
 npm install
 
-# Desenvolvimento local
+# Desenvolvimento local (Astro)
 npm run dev
 
-# Build otimizado para produção
+# Build otimizado para produção (Astro)
 npm run build:seo
 
 # Servir build localmente

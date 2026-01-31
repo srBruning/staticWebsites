@@ -38,11 +38,22 @@ body {
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
+  position: relative;
 }
 
-.blog-header a {
+.blog-header-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
   color: var(--blog-text);
   text-decoration: none;
+  font-weight: 600;
+  white-space: nowrap;
+  z-index: 10;
+}
+
+.blog-header-brand:hover span {
+  color: var(--blog-accent);
 }
 
 .blog-header .blog-logo {
@@ -51,14 +62,110 @@ body {
   display: block;
 }
 
-.blog-back {
-  font-size: 0.9375rem;
-  color: var(--blog-text-muted);
-  transition: color 0.2s;
+/* --- Menu Toggle Button --- */
+.blog-menu-toggle {
+  display: none;
+  flex-direction: column;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  gap: 0.4rem;
+  z-index: 11;
 }
 
-.blog-back:hover {
+.blog-menu-toggle span {
+  width: 24px;
+  height: 2px;
+  background: var(--blog-text);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.blog-menu-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translate(8px, 8px);
+}
+
+.blog-menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.blog-menu-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* --- Navigation --- */
+.blog-nav {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.blog-nav-item {
+  font-size: 0.9375rem;
+  color: var(--blog-text-muted);
+  text-decoration: none;
+  transition: color 0.2s;
+  white-space: nowrap;
+}
+
+.blog-nav-item:hover {
   color: var(--blog-accent);
+}
+
+.blog-nav-back {
+  display: none;
+}
+
+/* --- Mobile Responsive --- */
+@media (max-width: 768px) {
+  .blog-menu-toggle {
+    display: flex;
+  }
+  
+  .blog-nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--blog-surface);
+    border-bottom: 1px solid var(--blog-border);
+    flex-direction: column;
+    gap: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    padding: 0;
+  }
+  
+  .blog-nav.active {
+    max-height: 500px;
+    padding: 1rem 0;
+  }
+  
+  .blog-nav-item {
+    display: block;
+    padding: 0.75rem 1.5rem;
+    width: 100%;
+    color: var(--blog-text);
+    border-bottom: 1px solid var(--blog-border);
+  }
+  
+  .blog-nav-item:hover {
+    background: var(--blog-bg);
+    color: var(--blog-accent);
+  }
+  
+  .blog-nav-back {
+    display: block;
+    border-bottom: none;
+    color: var(--blog-text-muted);
+    font-weight: 500;
+  }
+  
+  .blog-header-brand span {
+    display: none;
+  }
 }
 
 /* --- Container --- */
