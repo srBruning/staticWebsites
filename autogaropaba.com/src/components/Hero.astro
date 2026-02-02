@@ -7,14 +7,14 @@ const phoneNumber = '5554984151823';
     <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black"></div>
   </div>
 
-  <div class="relative h-full flex flex-col items-center justify-center px-4 text-center">
+  <div id="p1" class="relative h-full flex flex-col items-center px-4 text-center [@media(min-width:400px)]:justify-center">
     <div class="max-w-4xl">
       <img
         src="/assets/logo.webp"
         srcset="/assets/logo_240x312.webp 240w, /assets/logo_350x455.webp 350w, /assets/logo.webp 500w"
         sizes="(min-width: 768px) 160px, 128px"
         alt="Bruning Logo"
-        class="w-32 md:w-40 h-auto mx-auto mb-6 drop-shadow-2xl"
+        class="w-20 md:w-60 h-auto mx-auto mb-4 drop-shadow-2xl"
         loading="lazy"
       />
       <h1 class="text-5xl md:text-7xl font-bold text-white mb-4">Bruning</h1>
@@ -22,19 +22,17 @@ const phoneNumber = '5554984151823';
       <h2 class="text-2xl md:text-3xl text-red-500 mb-4">
         <strong>Recuperadora</strong> e <strong>Estética Automotiva</strong> em <strong>Garopaba - SC</strong>
       </h2>
-      <p class="text-xl md:text-2xl text-gray-200 mb-8">Excelência em <strong>Funilaria</strong> &amp; <strong>Estética Automotiva</strong></p>
-      <p class="text-lg md:text-xl text-gray-300 mb-12">Transformamos danos em perfeição</p>
+      <p class="text-xl md:text-2xl text-gray-200 mb-4">Excelência em <strong>Funilaria</strong> &amp; <strong>Estética Automotiva</strong></p>
+      <p class="text-lg md:text-xl text-gray-300 [@media(min-width:400px)]:mb-12">Transformamos danos em perfeição</p>
 
-      <a href="tel:+5554984151823" class="inline-flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 transform hover:scale-105">
+      <a href="tel:+5554984151823" class="mb-4 inline-flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 transform hover:scale-105">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
         </svg>
         Entre em Contato
       
       </a>
-      
-
-      <a href={`https://wa.me/${phoneNumber}`} target="_blank" class="inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 transform hover:scale-105">
+       <a href={`https://wa.me/${phoneNumber}`} target="_blank" class="inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 transform hover:scale-105">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
         </svg>
