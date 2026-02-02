@@ -20,23 +20,27 @@ console.log(`Loading environment variables from: ${envPath}`);
 const publicDir = path.join(__dirname, '..', 'public');
 const siteUrl = process.env.VITE_SITE_URL || 'https://autogaropaba.com';
 console.log('Using site URL:', siteUrl);
+
+// Gerar data corrente no formato YYYY-MM-DD
+const currentDate = new Date().toISOString().split('T')[0];
+
 const robotsContent = `User-agent: *
 Allow: /
 
 Sitemap: ${siteUrl}/sitemap.xml
 `;
 
-const sitemapContent = `<?xml version="1.0" encoding="UTF-8"?>
+const sitemapContent = `<?xml version="1.1" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>${siteUrl}#sobre</loc>
-    <lastmod>2024-07-27</lastmod>
+    <lastmod>${currentDate}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>${siteUrl}#servicos</loc>
-    <lastmod>2024-07-27</lastmod>
+    <lastmod>${currentDate}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     ${servicesImages.map(image => `
@@ -48,13 +52,13 @@ const sitemapContent = `<?xml version="1.0" encoding="UTF-8"?>
   </url>
   <url>
     <loc>${siteUrl}#garopaba</loc>
-    <lastmod>2024-07-27</lastmod>
+    <lastmod>${currentDate}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     </url>
     <url>
     <loc>${siteUrl}#contato</loc>
-    <lastmod>2024-07-27</lastmod>
+    <lastmod>${currentDate}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     ${garopabaImages.map(image => `
@@ -66,7 +70,7 @@ const sitemapContent = `<?xml version="1.0" encoding="UTF-8"?>
   </url>
   <url>
     <loc>${siteUrl}blog</loc>
-    <lastmod>2024-07-27</lastmod>
+    <lastmod>${currentDate}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
