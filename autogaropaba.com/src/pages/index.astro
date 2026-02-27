@@ -8,6 +8,15 @@ import Contact from '../components/Contact.astro';
 import Cidade from '../components/Cidade.astro';
 import Footer from '../components/Footer.astro';
 ---
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17981023794"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-17981023794');
+</script>
 
 <Layout title="Bruning - Funilaria e Estética Automotiva">
   <Navbar />
