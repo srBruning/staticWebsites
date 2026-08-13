@@ -1,0 +1,83 @@
+---
+import { business } from '../data/business';
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="bg-[#070707] border-t border-white/10 text-gray-400 text-sm">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
+      
+      <!-- Brand Info (Spans 2 cols on lg) -->
+      <div class="lg:col-span-2 space-y-4">
+        <div class="flex items-center gap-3">
+          <img src="/images/brand/logo_principal_black.png" alt="Auto Recuperadora Bruning" class="h-10 w-auto" />
+          <span class="text-xl font-black text-white tracking-tight">BRUNING</span>
+        </div>
+        <p class="text-xs text-gray-400 leading-relaxed max-w-sm">
+          {business.description}
+        </p>
+        <div class="pt-2 text-xs font-semibold text-gray-300">
+          📍 {business.address.full}
+        </div>
+      </div>
+
+      <!-- Navigation Links -->
+      <div class="space-y-3">
+        <div class="text-xs font-bold text-white uppercase tracking-wider">Navegação</div>
+        <ul class="space-y-2 text-xs">
+          <li><a href="/" class="hover:text-[#f1262d] transition-colors">Início</a></li>
+          <li><a href="#servicos" class="hover:text-[#f1262d] transition-colors">Serviços</a></li>
+          <li><a href="#antes-e-depois" class="hover:text-[#f1262d] transition-colors">Antes & Depois</a></li>
+          <li><a href="#galeria" class="hover:text-[#f1262d] transition-colors">Resultados</a></li>
+          <li><a href="#sobre" class="hover:text-[#f1262d] transition-colors">Sobre Nós</a></li>
+          <li><a href="#contato" class="hover:text-[#f1262d] transition-colors">Contato</a></li>
+        </ul>
+      </div>
+
+      <!-- Services List -->
+      <div class="space-y-3">
+        <div class="text-xs font-bold text-white uppercase tracking-wider">Serviços</div>
+        <ul class="space-y-2 text-xs">
+          <li><a href="#servicos" class="hover:text-[#f1262d] transition-colors">Chapeação & Funilaria</a></li>
+          <li><a href="#servicos" class="hover:text-[#f1262d] transition-colors">Pintura Automotiva</a></li>
+          <li><a href="#servicos" class="hover:text-[#f1262d] transition-colors">Retoques Localizados</a></li>
+          <li><a href="#servicos" class="hover:text-[#f1262d] transition-colors">Polimento & Acabamento</a></li>
+          <li><a href="#servicos" class="hover:text-[#f1262d] transition-colors">Revitalização de Faróis</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="space-y-3">
+        <div class="text-xs font-bold text-white uppercase tracking-wider">Contato</div>
+        <ul class="space-y-2 text-xs">
+          {business.phones.map(p => (
+            <li>
+              <a href={`https://wa.me/${p.rawNumber}`} target="_blank" rel="noopener noreferrer" class="hover:text-[#f1262d] transition-colors">
+                📞 {p.label} {p.primary ? '(WhatsApp)' : ''}
+              </a>
+            </li>
+          ))}
+          <li>
+            <a href={business.instagramUrl} target="_blank" rel="noopener noreferrer" class="hover:text-[#f1262d] transition-colors">
+              📸 @{business.instagram}
+            </a>
+          </li>
+          <li class="pt-2 text-[11px] text-gray-500">
+            {business.workingHours}
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Bottom Copyright Bar -->
+    <div class="mt-12 pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-500 space-y-4 sm:space-y-0">
+      <div>
+        © {currentYear} {business.name}. Todos os direitos reservados.
+      </div>
+      <div>
+        Caxias do Sul / RS
+      </div>
+    </div>
+  </div>
+</footer>

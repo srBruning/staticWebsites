@@ -1,0 +1,130 @@
+---
+import { business } from '../data/business';
+---
+
+<header id="main-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-[#070707]/90 backdrop-blur-md border-b border-white/10">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+    <!-- Logo -->
+    <a href="/" class="flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-[#f1262d] rounded-lg p-1" aria-label="Home Auto Recuperadora Bruning">
+      <img 
+        src="/images/brand/logo_principal_black.png" 
+        alt="Auto Recuperadora Bruning" 
+        class="h-10 sm:h-12 w-auto object-contain transition-transform group-hover:scale-105"
+      />
+      <div class="hidden xs:flex flex-col">
+        <span class="text-xs tracking-wider uppercase text-gray-400 font-semibold leading-tight">Auto Recuperadora</span>
+        <span class="text-lg font-black tracking-tight text-white leading-none group-hover:text-[#f1262d] transition-colors">
+          BRUNING
+        </span>
+      </div>
+    </a>
+
+    <!-- Desktop Navigation Links -->
+    <nav class="hidden md:flex items-center gap-8">
+      <a href="/" class="text-sm font-medium text-gray-300 hover:text-[#f1262d] transition-colors py-1 relative after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-[#f1262d] after:scale-x-0 hover:after:scale-x-100 after:transition-transform">
+        Início
+      </a>
+      <a href="#servicos" class="text-sm font-medium text-gray-300 hover:text-[#f1262d] transition-colors py-1 relative after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-[#f1262d] after:scale-x-0 hover:after:scale-x-100 after:transition-transform">
+        Serviços
+      </a>
+      <a href="#antes-e-depois" class="text-sm font-medium text-gray-300 hover:text-[#f1262d] transition-colors py-1 relative after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-[#f1262d] after:scale-x-0 hover:after:scale-x-100 after:transition-transform">
+        Antes & Depois
+      </a>
+      <a href="#galeria" class="text-sm font-medium text-gray-300 hover:text-[#f1262d] transition-colors py-1 relative after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-[#f1262d] after:scale-x-0 hover:after:scale-x-100 after:transition-transform">
+        Resultados
+      </a>
+      <a href="#sobre" class="text-sm font-medium text-gray-300 hover:text-[#f1262d] transition-colors py-1 relative after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-[#f1262d] after:scale-x-0 hover:after:scale-x-100 after:transition-transform">
+        Sobre
+      </a>
+      <a href="#contato" class="text-sm font-medium text-gray-300 hover:text-[#f1262d] transition-colors py-1 relative after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-[#f1262d] after:scale-x-0 hover:after:scale-x-100 after:transition-transform">
+        Contato
+      </a>
+    </nav>
+
+    <!-- Header CTA & Mobile Menu Toggle -->
+    <div class="flex items-center gap-4">
+      <a 
+        href={business.getWhatsappUrl()}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="hidden sm:inline-flex items-center gap-2 bg-[#f1262d] hover:bg-[#e31e24] text-white text-sm font-bold px-5 py-2.5 rounded-xl transition-all shadow-lg shadow-[#f1262d]/20 hover:scale-105 active:scale-95"
+      >
+        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+          <path d="M12.031 0C5.394 0 0 5.394 0 12.031c0 2.124.555 4.198 1.608 6.02L0 24l6.168-1.617a12.007 12.007 0 005.863 1.516h.005c6.637 0 12.031-5.394 12.031-12.031 0-3.212-1.251-6.234-3.522-8.505C18.275 1.091 15.244 0 12.031 0zm0 22.062h-.005a10.024 10.024 0 01-5.109-1.396l-.366-.217-3.792.994 1.012-3.696-.239-.38a10.028 10.028 0 01-1.536-5.336c0-5.541 4.51-10.05 10.05-10.05 2.684 0 5.207 1.045 7.105 2.943 1.898 1.898 2.943 4.421 2.943 7.105 0 5.542-4.509 10.051-10.065 10.051zm5.51-7.534c-.302-.151-1.787-.882-2.063-.982-.276-.101-.478-.151-.68.151-.202.302-.781.982-.957 1.183-.176.202-.352.226-.654.076-.302-.151-1.275-.47-2.428-1.499-.897-.8-1.502-1.789-1.678-2.091-.176-.302-.019-.465.132-.615.136-.135.302-.352.453-.528.151-.176.202-.302.302-.503.101-.202.05-.377-.025-.528-.075-.151-.68-1.636-.931-2.239-.244-.587-.492-.507-.68-.517h-.578c-.202 0-.528.075-.805.377s-1.056 1.032-1.056 2.518 1.081 2.917 1.232 3.118c.151.202 2.128 3.25 5.156 4.557.72.311 1.282.497 1.721.637.723.23 1.381.197 1.901.12.58-.087 1.787-.73 2.039-1.433.252-.704.252-1.308.176-1.433-.075-.126-.276-.202-.578-.353z"/>
+        </svg>
+        <span>Solicitar Orçamento</span>
+      </a>
+
+      <!-- Mobile Hamburger Button -->
+      <button 
+        id="mobile-menu-btn" 
+        type="button" 
+        class="md:hidden p-2 text-gray-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-[#f1262d] rounded-lg"
+        aria-label="Abrir Menu de Navegação"
+        aria-expanded="false"
+      >
+        <svg id="icon-hamburger" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+        <svg id="icon-[#f1262d]close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Menu Drawer -->
+  <div id="mobile-menu" class="hidden md:hidden bg-[#111111] border-b border-white/10 px-4 pt-2 pb-6 space-y-3">
+    <a href="/" class="block py-2 text-base font-semibold text-white hover:text-[#f1262d] border-b border-white/5">Início</a>
+    <a href="#servicos" class="block py-2 text-base font-semibold text-gray-300 hover:text-[#f1262d] border-b border-white/5">Serviços</a>
+    <a href="#antes-e-depois" class="block py-2 text-base font-semibold text-gray-300 hover:text-[#f1262d] border-b border-white/5">Antes & Depois</a>
+    <a href="#galeria" class="block py-2 text-base font-semibold text-gray-300 hover:text-[#f1262d] border-b border-white/5">Resultados</a>
+    <a href="#sobre" class="block py-2 text-base font-semibold text-gray-300 hover:text-[#f1262d] border-b border-white/5">Sobre</a>
+    <a href="#contato" class="block py-2 text-base font-semibold text-gray-300 hover:text-[#f1262d] border-b border-white/5">Contato</a>
+    <div class="pt-2">
+      <a 
+        href={business.getWhatsappUrl()}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="w-full flex items-center justify-center gap-2 bg-[#f1262d] hover:bg-[#e31e24] text-white font-bold py-3 rounded-xl transition-all shadow-md"
+      >
+        <span>Solicitar Orçamento no WhatsApp</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<script>
+  const btn = document.getElementById('mobile-menu-btn');
+  const menu = document.getElementById('mobile-menu');
+  const iconBurger = document.getElementById('icon-hamburger');
+  const iconClose = document.getElementById('icon-[#f1262d]close');
+
+  if (btn && menu) {
+    btn.addEventListener('click', () => {
+      const isOpen = !menu.classList.contains('hidden');
+      if (isOpen) {
+        menu.classList.add('hidden');
+        btn.setAttribute('aria-expanded', 'false');
+        iconBurger?.classList.remove('hidden');
+        iconClose?.classList.add('hidden');
+      } else {
+        menu.classList.remove('hidden');
+        btn.setAttribute('aria-expanded', 'true');
+        iconBurger?.classList.add('hidden');
+        iconClose?.classList.remove('hidden');
+      }
+    });
+
+    // Close menu when clicking link
+    const links = menu.querySelectorAll('a');
+    links.forEach(link => {
+      link.addEventListener('click', () => {
+        menu.classList.add('hidden');
+        btn.setAttribute('aria-expanded', 'false');
+        iconBurger?.classList.remove('hidden');
+        iconClose?.classList.add('hidden');
+      });
+    });
+  }
+</script>

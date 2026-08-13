@@ -1,0 +1,25 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ContactSection from '../components/ContactSection.astro';
+import InteractiveQuote from '../components/InteractiveQuote.astro';
+import CtaBanner from '../components/CtaBanner.astro';
+---
+
+<BaseLayout 
+  title="Contato e Localização | Auto Recuperadora Bruning"
+  description="Entre em contato com a Auto Recuperadora Bruning em Caxias do Sul. Rua Oscar Serafini, 91 — Esplanada. Telefones: (54) 98136-5147 e (54) 98437-2394."
+>
+  <div class="pt-28 pb-12 bg-[#070707] text-center border-b border-white/10">
+    <div class="max-w-4xl mx-auto px-4">
+      <span class="text-xs font-bold uppercase tracking-wider text-[#f1262d]">Fale Conosco</span>
+      <h1 class="text-4xl sm:text-5xl font-black text-white mt-2">Estamos à Disposição</h1>
+      <p class="text-gray-400 text-base mt-4 max-w-2xl mx-auto">
+        Visite nossa oficina em Caxias do Sul ou peça uma avaliação instantânea pelo WhatsApp.
+      </p>
+    </div>
+  </div>
+
+  <ContactSection />
+  <InteractiveQuote />
+  <CtaBanner />
+</BaseLayout>

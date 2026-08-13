@@ -1,0 +1,172 @@
+---
+import { beforeAfterItems } from '../data/gallery';
+import { business } from '../data/business';
+---
+
+<section id="antes-e-depois" class="py-24 bg-[#111111] border-y border-white/10 relative overflow-hidden">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Section Header -->
+    <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#f1262d]/10 text-[#f1262d] text-xs font-bold uppercase tracking-wider">
+        <span>Transformação Real</span>
+      </div>
+      <h2 class="text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tight">
+        O resultado <span class="text-[#f1262d]">fala por si</span>
+      </h2>
+      <p class="text-gray-400 text-base sm:text-lg">
+        Deslize o marcador para comparar a condição de entrada e o resultado final da recuperação estética executada na Bruning.
+      </p>
+    </div>
+
+    <!-- Before & After Comparison Cards Grid -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      {beforeAfterItems.map((item) => (
+        <div class="bg-[#070707] rounded-2xl border border-white/10 p-5 flex flex-col space-y-4">
+          <!-- Interactive Slider Box -->
+          <div 
+            class="before-after-container relative w-full h-64 sm:h-72 rounded-xl overflow-hidden select-none cursor-ew-resize border border-white/10"
+            data-[#f1262d]ba-id={item.id}
+            tabindex="0"
+            aria-label={`Comparação Antes e Depois: ${item.title}`}
+          >
+            <!-- After Image (Background full width) -->
+            <img 
+              src={item.afterImage} 
+              alt={`Depois - ${item.title}`} 
+              class="absolute inset-0 w-full h-full object-cover object-center pointer-events-none"
+            />
+            <span class="absolute top-3 right-3 bg-[#f1262d] text-white text-[10px] font-extrabold px-2.5 py-1 rounded shadow uppercase tracking-wider z-10">
+              DEPOIS
+            </span>
+
+            <!-- Before Image (Clipped overlay) -->
+            <div class="before-image-wrap absolute inset-y-0 left-0 w-1/2 overflow-hidden pointer-events-none z-10 border-r-2 border-white shadow-2xl">
+              <img 
+                src={item.beforeImage} 
+                alt={`Antes - ${item.title}`} 
+                class="absolute top-0 left-0 max-w-none h-full object-cover object-center pointer-events-none filter brightness-90"
+                style="width: 100%; height: 100%;"
+              />
+              <span class="absolute top-3 left-3 bg-black/80 text-white text-[10px] font-extrabold px-2.5 py-1 rounded shadow uppercase tracking-wider z-20">
+                ANTES
+              </span>
+            </div>
+
+            <!-- Slider Divider Line & Handle -->
+            <div class="slider-handle absolute inset-y-0 left-1/2 -ml-3 z-20 flex items-center justify-center pointer-events-none">
+              <div class="w-6 h-10 rounded-full bg-white text-black flex items-center justify-center shadow-2xl border-2 border-[#f1262d]">
+                <svg class="w-4 h-4 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M8 9l-3 3 3 3m8-6l3 3-3 3"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <!-- Description -->
+          <div class="space-y-2 flex-grow">
+            <div class="flex items-center justify-between text-xs text-[#f1262d] font-bold uppercase tracking-wider">
+              <span>{item.service}</span>
+              {item.vehicleModel && <span class="text-gray-400 font-normal">{item.vehicleModel}</span>}
+            </div>
+            <h3 class="text-lg font-bold text-white leading-snug">{item.title}</h3>
+            <p class="text-xs text-gray-400 leading-relaxed">{item.description}</p>
+          </div>
+
+          <!-- CTA link -->
+          <a 
+            href={business.getWhatsappUrl(`Olá! Vi o resultado de "${item.title}" no site e gostaria de solicitar uma avaliação semelhante.`)}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center justify-center gap-2 text-xs font-bold text-gray-300 hover:text-[#f1262d] transition-colors py-2 border-t border-white/5"
+          >
+            <span>Quero um resultado assim no meu carro</span>
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+            </svg>
+          </a>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>
+
+<script>
+  // Interactive Before/After slider script using pointer events & touch support
+  document.addEventListener('DOMContentLoaded', () => {
+    const containers = document.querySelectorAll('.before-after-container');
+
+    containers.forEach(container => {
+      const beforeWrap = container.querySelector('.before-image-wrap') as HTMLElement;
+      const handle = container.querySelector('.slider-handle') as HTMLElement;
+      const beforeImg = beforeWrap?.querySelector('img') as HTMLElement;
+
+      if (!beforeWrap || !handle || !beforeImg) return;
+
+      const updateSlider = (clientX: number) => {
+        const rect = container.getBoundingClientRect();
+        let position = ((clientX - rect.left) / rect.width) * 100;
+        if (position < 0) position = 0;
+        if (position > 100) position = 100;
+
+        beforeWrap.style.width = `${position}%`;
+        handle.style.left = `${position}%`;
+        
+        // Ensure child image maintains full container width to avoid scale distortion
+        beforeImg.style.width = `${rect.width}px`;
+      };
+
+      // Set initial image width
+      const setInitialDimensions = () => {
+        const rect = container.getBoundingClientRect();
+        beforeImg.style.width = `${rect.width}px`;
+      };
+
+      setInitialDimensions();
+      window.addEventListener('resize', setInitialDimensions);
+
+      let isDragging = false;
+
+      const startDrag = (e: MouseEvent | TouchEvent) => {
+        isDragging = true;
+        const clientX = 'touches' in e ? e.touches[0].clientX : e.clientX;
+        updateSlider(clientX);
+      };
+
+      const stopDrag = () => {
+        isDragging = false;
+      };
+
+      const onMove = (e: MouseEvent | TouchEvent) => {
+        if (!isDragging) return;
+        const clientX = 'touches' in e ? e.touches[0].clientX : e.clientX;
+        updateSlider(clientX);
+      };
+
+      container.addEventListener('mousedown', (e) => startDrag(e as MouseEvent));
+      container.addEventListener('touchstart', (e) => startDrag(e as TouchEvent), { passive: true });
+
+      window.addEventListener('mousemove', (e) => onMove(e));
+      window.addEventListener('touchmove', (e) => onMove(e), { passive: true });
+
+      window.addEventListener('mouseup', stopDrag);
+      window.addEventListener('touchend', stopDrag);
+
+      // Keyboard accessibility (ArrowLeft & ArrowRight)
+      container.addEventListener('keydown', (e: Event) => {
+        const keyEvent = e as KeyboardEvent;
+        const currentWidth = parseFloat(beforeWrap.style.width || '50');
+        if (keyEvent.key === 'ArrowLeft') {
+          const newPos = Math.max(0, currentWidth - 5);
+          beforeWrap.style.width = `${newPos}%`;
+          handle.style.left = `${newPos}%`;
+        } else if (keyEvent.key === 'ArrowRight') {
+          const newPos = Math.min(100, currentWidth + 5);
+          beforeWrap.style.width = `${newPos}%`;
+          handle.style.left = `${newPos}%`;
+        }
+      });
+    });
+  });
+</script>

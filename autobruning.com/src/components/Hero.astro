@@ -1,0 +1,101 @@
+---
+import { business } from '../data/business';
+---
+
+<section class="relative min-h-[85vh] flex items-center pt-24 pb-16 overflow-hidden bg-[#070707]">
+  <!-- Hero Background Image & Overlays -->
+  <div class="absolute inset-0 z-0">
+    <img 
+      src="/images/gallery/cars01.jpg" 
+      alt="Carro recuperado com acabamento impecável" 
+      class="w-full h-full object-cover object-center opacity-40 scale-105 transform filter contrast-125"
+    />
+    <!-- Gradient Overlay: Heavy dark on the left for crisp text contrast -->
+    <div class="absolute inset-0 bg-gradient-to-r from-[#070707] via-[#070707]/90 to-transparent"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-[#070707] via-transparent to-[#070707]/80"></div>
+    <!-- Subtle Red Glow Spot -->
+    <div class="absolute top-1/4 right-10 w-96 h-96 bg-[#f1262d]/15 rounded-full filter blur-[120px] pointer-events-none"></div>
+  </div>
+
+  <!-- Content Container -->
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+    <div class="max-w-3xl space-y-6">
+      
+      <!-- Eyebrow Badge -->
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#111111]/90 border border-[#f1262d]/30 text-xs font-bold uppercase tracking-wider text-gray-200 shadow-inner">
+        <span class="w-2 h-2 rounded-full bg-[#f1262d] animate-pulse"></span>
+        <span>AUTO RECUPERADORA • CAXIAS DO SUL / RS</span>
+      </div>
+
+      <!-- Headline -->
+      <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-white leading-[1.1]">
+        Deixamos seu carro <br class="hidden sm:inline" />
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#f1262d] via-[#ff3132] to-[#f1262d] drop-shadow-md">
+          novo, de novo.
+        </span>
+      </h1>
+
+      <!-- Description -->
+      <p class="text-lg sm:text-xl text-gray-300 font-normal leading-relaxed max-w-2xl">
+        Chapeação, pintura automotiva, retoques e recuperação estética em Caxias do Sul. Padrão de acabamento impecável que devolve o brilho e a confiança ao seu automóvel.
+      </p>
+
+      <!-- Action CTAs -->
+      <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
+        <a 
+          href={business.getWhatsappUrl()}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center justify-center gap-3 bg-[#f1262d] hover:bg-[#e31e24] text-white text-base sm:text-lg font-bold px-8 py-4 rounded-xl transition-all shadow-xl shadow-[#f1262d]/25 hover:scale-[1.02] active:scale-[0.98] group"
+        >
+          <svg class="w-6 h-6 fill-current transition-transform group-hover:rotate-6" viewBox="0 0 24 24">
+            <path d="M12.031 0C5.394 0 0 5.394 0 12.031c0 2.124.555 4.198 1.608 6.02L0 24l6.168-1.617a12.007 12.007 0 005.863 1.516h.005c6.637 0 12.031-5.394 12.031-12.031 0-3.212-1.251-6.234-3.522-8.505C18.275 1.091 15.244 0 12.031 0zm0 22.062h-.005a10.024 10.024 0 01-5.109-1.396l-.366-.217-3.792.994 1.012-3.696-.239-.38a10.028 10.028 0 01-1.536-5.336c0-5.541 4.51-10.05 10.05-10.05 2.684 0 5.207 1.045 7.105 2.943 1.898 1.898 2.943 4.421 2.943 7.105 0 5.542-4.509 10.051-10.065 10.051zm5.51-7.534c-.302-.151-1.787-.882-2.063-.982-.276-.101-.478-.151-.68.151-.202.302-.781.982-.957 1.183-.176.202-.352.226-.654.076-.302-.151-1.275-.47-2.428-1.499-.897-.8-1.502-1.789-1.678-2.091-.176-.302-.019-.465.132-.615.136-.135.302-.352.453-.528.151-.176.202-.302.302-.503.101-.202.05-.377-.025-.528-.075-.151-.68-1.636-.931-2.239-.244-.587-.492-.507-.68-.517h-.578c-.202 0-.528.075-.805.377s-1.056 1.032-1.056 2.518 1.081 2.917 1.232 3.118c.151.202 2.128 3.25 5.156 4.557.72.311 1.282.497 1.721.637.723.23 1.381.197 1.901.12.58-.087 1.787-.73 2.039-1.433.252-.704.252-1.308.176-1.433-.075-.126-.276-.202-.578-.353z"/>
+          </svg>
+          <span>Solicitar Orçamento no WhatsApp</span>
+        </a>
+
+        <a 
+          href="#antes-e-depois" 
+          class="inline-flex items-center justify-center gap-2 border border-white/20 hover:border-white/50 bg-white/5 hover:bg-white/10 text-white text-base font-semibold px-6 py-4 rounded-xl transition-all"
+        >
+          <span>Ver Resultados</span>
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </a>
+      </div>
+
+      <!-- Micro-proof Pill Bar -->
+      <div class="pt-6 border-t border-white/10 flex flex-wrap items-center gap-4 text-xs font-semibold text-gray-400">
+        <span class="flex items-center gap-1.5 text-gray-200">
+          <svg class="w-4 h-4 text-[#f1262d]" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+          </svg>
+          Pintura Especializada
+        </span>
+        <span class="text-gray-600">•</span>
+        <span class="flex items-center gap-1.5 text-gray-200">
+          <svg class="w-4 h-4 text-[#f1262d]" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+          </svg>
+          Chapeação & Funilaria
+        </span>
+        <span class="text-gray-600">•</span>
+        <span class="flex items-center gap-1.5 text-gray-200">
+          <svg class="w-4 h-4 text-[#f1262d]" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+          </svg>
+          Retoques & Pequenos Reparos
+        </span>
+        <span class="text-gray-600">•</span>
+        <span class="flex items-center gap-1.5 text-gray-200">
+          <svg class="w-4 h-4 text-[#f1262d]" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+          </svg>
+          Polimento & Faróis
+        </span>
+      </div>
+
+    </div>
+  </div>
+</section>

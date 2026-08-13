@@ -1,0 +1,128 @@
+---
+import { services } from '../data/services';
+---
+
+<section id="orcamento" class="py-20 bg-[#111111] border-y border-white/10 relative overflow-hidden">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="bg-[#070707] rounded-3xl border border-white/10 p-8 sm:p-10 shadow-2xl relative">
+      
+      <div class="text-center space-y-3 mb-8">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#f1262d]/10 text-[#f1262d] text-xs font-bold uppercase tracking-wider">
+          <span>Orçamento Rápido</span>
+        </div>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-white">
+          Solicite uma <span class="text-[#f1262d]">Avaliação Rápida</span>
+        </h2>
+        <p class="text-xs sm:text-sm text-gray-400">
+          Preencha os dados do seu veículo para gerar uma mensagem direta e falar conosco pelo WhatsApp.
+        </p>
+      </div>
+
+      <form id="quote-calculator-form" class="space-y-6">
+        
+        <!-- Service Selector -->
+        <div>
+          <label for="quote-service" class="block text-xs font-bold text-gray-300 uppercase tracking-wider mb-2">
+            Selecione o Serviço Desejado
+          </label>
+          <select 
+            id="quote-service" 
+            name="service"
+            class="w-full bg-[#111111] border border-white/15 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-[#f1262d] transition-colors"
+            required
+          >
+            <option value="Serviço Geral / Avaliação">Selecione uma opção...</option>
+            {services.map(s => (
+              <option value={s.title}>{s.title}</option>
+            ))}
+            <option value="Outro Serviço">Outro Reparo / Não sei especificar</option>
+          </select>
+        </div>
+
+        <!-- Grid: Vehicle & Year/Model -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label for="quote-vehicle" class="block text-xs font-bold text-gray-300 uppercase tracking-wider mb-2">
+              Modelo do Veículo (ex: Civic 2020)
+            </label>
+            <input 
+              type="text" 
+              id="quote-vehicle" 
+              placeholder="Ex: Golf TSI, Corolla, HB20..."
+              class="w-full bg-[#111111] border border-white/15 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-[#f1262d] transition-colors"
+              required
+            />
+          </div>
+          <div>
+            <label for="quote-[#f1262d]location" class="block text-xs font-bold text-gray-300 uppercase tracking-wider mb-2">
+              Bairro / Cidade
+            </label>
+            <input 
+              type="text" 
+              id="quote-[#f1262d]location" 
+              placeholder="Ex: Caxias do Sul / Esplanada"
+              class="w-full bg-[#111111] border border-white/15 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-[#f1262d] transition-colors"
+            />
+          </div>
+        </div>
+
+        <!-- Description of Damage -->
+        <div>
+          <label for="quote-description" class="block text-xs font-bold text-gray-300 uppercase tracking-wider mb-2">
+            Descreva o que precisa ser feito (amassado, risco, pintura...)
+          </label>
+          <textarea 
+            id="quote-description" 
+            rows="3"
+            placeholder="Ex: Arranhão na porta direita e pequeno amassado no para-choque traseiro."
+            class="w-full bg-[#111111] border border-white/15 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-[#f1262d] transition-colors resize-none"
+          ></textarea>
+        </div>
+
+        <!-- Submit Button -->
+        <button 
+          type="submit"
+          class="w-full flex items-center justify-center gap-3 bg-[#f1262d] hover:bg-[#e31e24] text-white text-base font-bold py-4 rounded-xl transition-all shadow-lg shadow-[#f1262d]/20 hover:scale-[1.01] active:scale-[0.99]"
+        >
+          <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+            <path d="M12.031 0C5.394 0 0 5.394 0 12.031c0 2.124.555 4.198 1.608 6.02L0 24l6.168-1.617a12.007 12.007 0 005.863 1.516h.005c6.637 0 12.031-5.394 12.031-12.031 0-3.212-1.251-6.234-3.522-8.505C18.275 1.091 15.244 0 12.031 0zm0 22.062h-.005a10.024 10.024 0 01-5.109-1.396l-.366-.217-3.792.994 1.012-3.696-.239-.38a10.028 10.028 0 01-1.536-5.336c0-5.541 4.51-10.05 10.05-10.05 2.684 0 5.207 1.045 7.105 2.943 1.898 1.898 2.943 4.421 2.943 7.105 0 5.542-4.509 10.051-10.065 10.051zm5.51-7.534c-.302-.151-1.787-.882-2.063-.982-.276-.101-.478-.151-.68.151-.202.302-.781.982-.957 1.183-.176.202-.352.226-.654.076-.302-.151-1.275-.47-2.428-1.499-.897-.8-1.502-1.789-1.678-2.091-.176-.302-.019-.465.132-.615.136-.135.302-.352.453-.528.151-.176.202-.302.302-.503.101-.202.05-.377-.025-.528-.075-.151-.68-1.636-.931-2.239-.244-.587-.492-.507-.68-.517h-.578c-.202 0-.528.075-.805.377s-1.056 1.032-1.056 2.518 1.081 2.917 1.232 3.118c.151.202 2.128 3.25 5.156 4.557.72.311 1.282.497 1.721.637.723.23 1.381.197 1.901.12.58-.087 1.787-.73 2.039-1.433.252-.704.252-1.308.176-1.433-.075-.126-.276-.202-.578-.353z"/>
+          </svg>
+          <span>Abrir WhatsApp com minha Solicitação</span>
+        </button>
+
+      </form>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('quote-calculator-form') as HTMLFormElement;
+    if (!form) return;
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      
+      const serviceSelect = document.getElementById('quote-service') as HTMLSelectElement;
+      const vehicleInput = document.getElementById('quote-vehicle') as HTMLInputElement;
+      const locationInput = document.getElementById('quote-[#f1262d]location') as HTMLInputElement;
+      const descInput = document.getElementById('quote-description') as HTMLTextAreaElement;
+
+      const service = serviceSelect.value || 'Geral';
+      const vehicle = vehicleInput.value.trim() || 'Não informado';
+      const location = locationInput.value.trim() || 'Caxias do Sul';
+      const desc = descInput.value.trim() || 'Gostaria de uma avaliação geral.';
+
+      const message = `Olá! Gostaria de solicitar um orçamento na Auto Recuperadora Bruning.\n\n` +
+                      `🔧 *Serviço:* ${service}\n` +
+                      `🚗 *Veículo:* ${vehicle}\n` +
+                      `📍 *Localização:* ${location}\n` +
+                      `📝 *Detalhes:* ${desc}`;
+
+      const whatsappNumber = '5554981365147';
+      const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+
+      window.open(whatsappUrl, '_blank');
+    });
+  });
+</script>
