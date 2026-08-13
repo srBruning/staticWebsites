@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://autobruning.com.br/sitemap.xml
+Sitemap: https://autobruning.dibr3.com/sitemap.xml

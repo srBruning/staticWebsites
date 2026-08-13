@@ -78,7 +78,7 @@ O projeto foi construído do zero seguindo rigorosamente o guia de identidade vi
 
 ### 3.1 Próximos Passos Recomendados para Produção
 - [ ] **Validação Factual de Horários de Atendimento:** Confirmar com o cliente os horários exatos de funcionamento (atualmente configurado como padrão *Segunda a Sexta: 08:00 - 18:00* em `src/data/business.ts`).
-- [ ] **Configuração do Domínio e Hospedagem:** Deploy em plataforma estática (Vercel, Netlify, Cloudflare Pages ou Firebase Hosting) apontando para o domínio `autobruning.com.br`.
+- [ ] **Configuração do Domínio e Hospedagem:** Deploy em plataforma estática (Vercel, Netlify, Cloudflare Pages ou Firebase Hosting) apontando para o subdomínio `autobruning.dibr3.com`.
 - [ ] **Google Analytics / Pixel (Opcional):** Adicionar scripts de rastreamento de conversão apenas se o cliente solicitar.
 - [ ] **Expansão do Portfólio de Fotos:** Conforme novas fotos de carros finalizados forem disponibilizadas, basta adicionar aos objetos em `src/data/gallery.ts`.
 
