@@ -26,8 +26,8 @@ const differentials = [
 <section class="py-12 bg-[#111111] border-y border-white/10 relative overflow-hidden">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-      {differentials.map(item => (
-        <div class="flex items-start gap-4 p-5 rounded-2xl bg-[#070707]/60 border border-white/5 hover:border-[#f1262d]/40 transition-all duration-300 group">
+      {differentials.map((item, index) => (
+        <div class={`flex items-start gap-4 p-5 rounded-2xl bg-[#070707]/60 border border-white/5 hover:border-[#f1262d]/40 transition-all duration-300 group reveal-on-scroll delay-${(index + 1) * 100}`}>
           <div class="w-12 h-12 rounded-xl bg-[#f1262d]/10 text-[#f1262d] flex items-center justify-center shrink-0 group-hover:bg-[#f1262d] group-hover:text-white transition-colors">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" set:html={item.icon}></svg>
           </div>

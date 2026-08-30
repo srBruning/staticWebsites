@@ -7,7 +7,7 @@ import { business } from '../data/business';
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     
     <!-- Section Header -->
-    <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+    <div class="text-center max-w-3xl mx-auto space-y-4 mb-16 reveal-on-scroll">
       <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#f1262d]/10 text-[#f1262d] text-xs font-bold uppercase tracking-wider">
         <span>Transformação Real</span>
       </div>
@@ -21,8 +21,8 @@ import { business } from '../data/business';
 
     <!-- Before & After Comparison Cards Grid -->
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-      {beforeAfterItems.map((item) => (
-        <div class="bg-[#070707] rounded-2xl border border-white/10 p-5 flex flex-col space-y-4">
+      {beforeAfterItems.map((item, index) => (
+        <div class={`bg-[#070707] rounded-2xl border border-white/10 p-5 flex flex-col space-y-4 reveal-on-scroll delay-${(index % 3 + 1) * 100}`}>
           <!-- Interactive Slider Box -->
           <div 
             class="before-after-container relative w-full h-64 sm:h-72 rounded-xl overflow-hidden select-none cursor-ew-resize border border-white/10"

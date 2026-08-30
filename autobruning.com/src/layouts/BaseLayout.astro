@@ -103,5 +103,29 @@ const jsonLd = {
 
     <Footer />
     <WhatsAppButton />
+
+    <script>
+      const observerCallback = (entries: IntersectionObserverEntry[], observer: IntersectionObserver) => {
+        entries.forEach((entry: IntersectionObserverEntry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-revealed');
+            observer.unobserve(entry.target);
+          }
+        });
+      };
+
+      const observerOptions = {
+        root: null,
+        rootMargin: '0px 0px -10% 0px',
+        threshold: 0.1
+      };
+
+      // Initialize on client
+      if (typeof window !== 'undefined') {
+        const observer = new IntersectionObserver(observerCallback, observerOptions);
+        const elements = document.querySelectorAll('.reveal-on-scroll');
+        elements.forEach(el => observer.observe(el));
+      }
+    </script>
   </body>
 </html>

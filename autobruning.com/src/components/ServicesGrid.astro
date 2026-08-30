@@ -10,7 +10,7 @@ import { business } from '../data/business';
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
     
     <!-- Section Header -->
-    <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+    <div class="text-center max-w-3xl mx-auto space-y-4 mb-16 reveal-on-scroll">
       <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#f1262d]/10 text-[#f1262d] text-xs font-bold uppercase tracking-wider">
         <span>Nossas Soluções</span>
       </div>
@@ -24,8 +24,8 @@ import { business } from '../data/business';
 
     <!-- Grid of Services -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      {services.map(service => (
-        <div class="relative bg-[#111111] rounded-2xl border border-white/10 hover:border-[#f1262d]/50 transition-all duration-300 flex flex-col overflow-hidden group hover:-translate-y-1 hover:shadow-xl hover:shadow-[#f1262d]/10">
+      {services.map((service, index) => (
+        <div class={`relative bg-[#111111] rounded-2xl border border-white/10 hover:border-[#f1262d]/50 transition-all duration-300 flex flex-col overflow-hidden group hover:-translate-y-1 hover:shadow-xl hover:shadow-[#f1262d]/10 reveal-on-scroll delay-${(index % 3 + 1) * 100}`}>
           <!-- Service Card Header Image -->
           <div class="relative h-48 overflow-hidden bg-black">
             <img 
