@@ -12,7 +12,10 @@ export const business = {
     state: 'RS',
     country: 'BR',
     full: 'Rua Oscar Serafini, 91 — Esplanada — Caxias do Sul / RS',
-    mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Rua+Oscar+Serafini+91+Esplanada+Caxias+do+Sul+RS',
+    mapsUrl: 'https://www.google.com/maps/place/Auto+Recuperadora+Bruning/@-29.1973085,-51.2020313,18.82z/data=!4m6!3m5!1s0x951ea30049df687d:0xc7da3f3b8d41f20a!8m2!3d-29.1972453!4d-51.2018627!16s%2Fg%2F11xljkfwc7?entry=ttu&g_ep=EgoyMDI2MDgyNi4wIKXMDSoASAFQAw%3D%3D',
+    wazeUrl: 'https://waze.com/ul?ll=-29.19720614143396,-51.20187893119833&navigate=yes',
+    latitude: -29.19720614143396,
+    longitude: -51.20187893119833,
   },
   phones: [
     {

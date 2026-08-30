@@ -33,7 +33,7 @@ import { business } from '../data/business';
             <!-- After Image (Background full width) -->
             <img 
               src={item.afterImage} 
-              alt={`Depois - ${item.title}`} 
+              alt={item.afterAlt} 
               class="absolute inset-0 w-full h-full object-cover object-center pointer-events-none"
             />
             <span class="absolute top-3 right-3 bg-[#f1262d] text-white text-[10px] font-extrabold px-2.5 py-1 rounded shadow uppercase tracking-wider z-10">
@@ -44,7 +44,7 @@ import { business } from '../data/business';
             <div class="before-image-wrap absolute inset-y-0 left-0 w-1/2 overflow-hidden pointer-events-none z-10 border-r-2 border-white shadow-2xl">
               <img 
                 src={item.beforeImage} 
-                alt={`Antes - ${item.title}`} 
+                alt={item.beforeAlt} 
                 class="absolute top-0 left-0 max-w-none h-full object-cover object-center pointer-events-none filter brightness-90"
                 style="width: 100%; height: 100%;"
               />

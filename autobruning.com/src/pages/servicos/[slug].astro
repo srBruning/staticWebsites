@@ -1,0 +1,88 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { services } from '../../data/services';
+import { business } from '../../data/business';
+
+export function getStaticPaths() {
+  return services.map(service => ({
+    params: { slug: service.slug },
+    props: { service },
+  }));
+}
+
+const { service } = Astro.props;
+---
+
+<BaseLayout 
+  title={service.seoTitle || `${service.title} em Caxias do Sul | Auto Recuperadora Bruning`}
+  description={service.seoDescription || service.description}
+  image={service.image}
+>
+  <div class="pt-32 pb-16 bg-[#070707] min-h-screen">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Breadcrumb -->
+      <nav class="flex text-sm text-gray-400 mb-8" aria-label="Breadcrumb">
+        <ol class="inline-flex items-center space-x-1 md:space-x-3">
+          <li class="inline-flex items-center">
+            <a href="/" class="hover:text-white transition-colors">Início</a>
+          </li>
+          <li>
+            <div class="flex items-center">
+              <svg class="w-4 h-4 text-gray-500 mx-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+              <a href="/servicos" class="hover:text-white transition-colors">Serviços</a>
+            </div>
+          </li>
+          <li aria-current="page">
+            <div class="flex items-center">
+              <svg class="w-4 h-4 text-gray-500 mx-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+              <span class="text-white font-medium">{service.title}</span>
+            </div>
+          </li>
+        </ol>
+      </nav>
+
+      <!-- Content -->
+      <h1 class="text-4xl sm:text-5xl font-black text-white tracking-tight mb-6">{service.headline}</h1>
+      
+      <div class="w-full h-80 sm:h-96 rounded-2xl overflow-hidden mb-10 border border-white/10 relative">
+        <img src={service.image} alt={`${service.title} em Caxias do Sul`} class="w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-gradient-to-t from-[#070707] to-transparent"></div>
+      </div>
+
+      <div class="prose prose-invert prose-lg max-w-none mb-12">
+        <p class="text-xl text-gray-300 font-medium leading-relaxed">{service.summary}</p>
+        <p class="text-gray-400 leading-relaxed mt-6">{service.description}</p>
+        
+        <h3 class="text-2xl font-bold text-white mt-10 mb-6 border-b border-white/10 pb-4">O que inclui nosso serviço:</h3>
+        <ul class="space-y-4">
+          {service.features.map(feature => (
+            <li class="flex items-start">
+              <svg class="w-6 h-6 text-[#f1262d] mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span class="text-gray-300">{feature}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- CTA -->
+      <div class="bg-[#111111] p-8 rounded-2xl border border-white/10 text-center">
+        <h3 class="text-2xl font-bold text-white mb-4">Precisa de {service.title.toLowerCase()}?</h3>
+        <p class="text-gray-400 mb-8">Faça um orçamento sem compromisso. Avaliamos seu veículo na hora em nossa oficina em Caxias do Sul.</p>
+        <a 
+          href={business.getWhatsappUrl(`Olá! Gostaria de saber mais sobre o serviço de ${service.title}.`)}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center justify-center gap-3 bg-[#f1262d] hover:bg-[#e31e24] text-white font-bold px-8 py-4 rounded-xl transition-all shadow-xl hover:scale-105"
+        >
+          <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+            <path d="M12.031 0C5.394 0 0 5.394 0 12.031c0 2.124.555 4.198 1.608 6.02L0 24l6.168-1.617a12.007 12.007 0 005.863 1.516h.005c6.637 0 12.031-5.394 12.031-12.031 0-3.212-1.251-6.234-3.522-8.505C18.275 1.091 15.244 0 12.031 0zm0 22.062h-.005a10.024 10.024 0 01-5.109-1.396l-.366-.217-3.792.994 1.012-3.696-.239-.38a10.028 10.028 0 01-1.536-5.336c0-5.541 4.51-10.05 10.05-10.05 2.684 0 5.207 1.045 7.105 2.943 1.898 1.898 2.943 4.421 2.943 7.105 0 5.542-4.509 10.051-10.065 10.051zm5.51-7.534c-.302-.151-1.787-.882-2.063-.982-.276-.101-.478-.151-.68.151-.202.302-.781.982-.957 1.183-.176.202-.352.226-.654.076-.302-.151-1.275-.47-2.428-1.499-.897-.8-1.502-1.789-1.678-2.091-.176-.302-.019-.465.132-.615.136-.135.302-.352.453-.528.151-.176.202-.302.302-.503.101-.202.05-.377-.025-.528-.075-.151-.68-1.636-.931-2.239-.244-.587-.492-.507-.68-.517h-.578c-.202 0-.528.075-.805.377s-1.056 1.032-1.056 2.518 1.081 2.917 1.232 3.118c.151.202 2.128 3.25 5.156 4.557.72.311 1.282.497 1.721.637.723.23 1.381.197 1.901.12.58-.087 1.787-.73 2.039-1.433.252-.704.252-1.308.176-1.433-.075-.126-.276-.202-.578-.353z"/>
+          </svg>
+          Solicitar Orçamento
+        </a>
+      </div>
+    </div>
+  </div>
+</BaseLayout>

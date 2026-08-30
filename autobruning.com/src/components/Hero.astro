@@ -1,14 +1,17 @@
 ---
+import { Image } from 'astro:assets';
 import { business } from '../data/business';
+import heroImage from '../assets/capa_01.jpeg';
 ---
 
 <section class="relative min-h-[85vh] flex items-center pt-24 pb-16 overflow-hidden bg-[#070707]">
   <!-- Hero Background Image & Overlays -->
   <div class="absolute inset-0 z-0">
-    <img 
-      src="/images/gallery/cars01.jpg" 
-      alt="Carro recuperado com acabamento impecável" 
+    <Image 
+      src={heroImage} 
+      alt="Chapeação e Pintura Automotiva em Caxias do Sul - Carro recuperado com acabamento impecável" 
       class="w-full h-full object-cover object-center opacity-40 scale-105 transform filter contrast-125"
+      loading="eager"
     />
     <!-- Gradient Overlay: Heavy dark on the left for crisp text contrast -->
     <div class="absolute inset-0 bg-gradient-to-r from-[#070707] via-[#070707]/90 to-transparent"></div>
@@ -61,6 +64,17 @@ import { business } from '../data/business';
           <span>Ver Resultados</span>
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </a>
+
+        <a 
+          href="#localizacao" 
+          class="inline-flex items-center justify-center gap-2 border border-white/20 hover:border-[#f1262d]/50 bg-white/5 hover:bg-[#f1262d]/10 text-white text-base font-semibold px-6 py-4 rounded-xl transition-all"
+        >
+          <span>Como Chegar</span>
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
           </svg>
         </a>
       </div>
