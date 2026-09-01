@@ -22,10 +22,15 @@ STATS_FILE="$OUTPUT_DIR/build-stats.json"
 
 echo -e "${BLUE}🔨 Iniciando build de produção...${NC}\n"
 
-# Verifica se arquivo de entrada existe
+# Verifica se arquivo de entrada existe, senão tenta index.html
 if [ ! -f "$INPUT_FILE" ]; then
-    echo -e "${RED}✗ Arquivo não encontrado: $INPUT_FILE${NC}"
-    exit 1
+    if [ -f "$SCRIPT_DIR/index.html" ]; then
+        echo -e "${YELLOW}⚠️ $INPUT_FILE não encontrado, usando fallback index.html${NC}"
+        INPUT_FILE="$SCRIPT_DIR/index.html"
+    else
+        echo -e "${RED}✗ Arquivo não encontrado: $INPUT_FILE e index.html${NC}"
+        exit 1
+    fi
 fi
 
 echo -e "${YELLOW}📖 Lendo $INPUT_FILE...${NC}"
@@ -84,6 +89,14 @@ done
 # Move o temporário para arquivo final
 mv "$TMP_MIN" "$OUTPUT_FILE"
 echo "" >> "$OUTPUT_FILE"
+
+# Copia arquivos adicionais
+for extra_file in sitemap.xml livros.html googlee5aa1f2f611bba92.html; do
+    if [ -f "$SCRIPT_DIR/$extra_file" ]; then
+        cp "$SCRIPT_DIR/$extra_file" "$OUTPUT_DIR/"
+        echo -e "   Copiado $extra_file -> output/$extra_file"
+    fi
+done
 
 minified_size=$(wc -c < "$OUTPUT_FILE")
 reduction=$(( (original_size - minified_size) * 100 / original_size ))

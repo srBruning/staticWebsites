@@ -246,6 +246,14 @@ async function build() {
       fs.writeFileSync(SITEMAPE_OUTPUT, sitemapHtml, 'utf-8');
       log(`📝 Escrevendo ${SITEMAPE_OUTPUT}...`, 'yellow');
     }
+
+    // Copiar googlee5aa1f2f611bba92.html se existir
+    const GOOGLE_VERIF_INPUT = path.join(__dirname, 'googlee5aa1f2f611bba92.html');
+    const GOOGLE_VERIF_OUTPUT = path.join(OUTPUT_DIR, 'googlee5aa1f2f611bba92.html');
+    if (fs.existsSync(GOOGLE_VERIF_INPUT)) {
+      fs.copyFileSync(GOOGLE_VERIF_INPUT, GOOGLE_VERIF_OUTPUT);
+      log(`📝 Copiando ${GOOGLE_VERIF_OUTPUT}...`, 'yellow');
+    }
     
     // Calcula estatísticas
     const stats = getStats(originalHTML, html);
