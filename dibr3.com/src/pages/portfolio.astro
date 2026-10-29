@@ -1,0 +1,136 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const projetos = [
+  {
+    nome: 'Auto Bruning',
+    url: 'https://autobruning.dibr3.com/',
+    dominio: 'autobruning.dibr3.com',
+    capa: '/portfolio/page_autobruning.png',
+    classe: 'bruning',
+    monograma: 'AB',
+    categoria: 'Recuperação automotiva',
+  },
+  {
+    nome: 'Bruning Garopaba',
+    url: 'https://autogaropaba.dibr3.com/',
+    dominio: 'autogaropaba.dibr3.com',
+    capa: '/portfolio/page_autogaropaba.png',
+    classe: 'garopaba',
+    monograma: 'BG',
+    categoria: 'Funilaria e estética automotiva',
+  },
+  {
+    nome: 'Forte Química',
+    url: 'https://fortequimica.dibr3.com/',
+    dominio: 'fortequimica.dibr3.com',
+    capa: '/portfolio/page_fortequimica.png',
+    classe: 'forte',
+    monograma: 'FQ',
+    categoria: 'Produtos de limpeza',
+  },
+  {
+    nome: 'Diego Bruning',
+    url: 'https://diegobruning.dibr3.com/',
+    dominio: 'diegobruning.dibr3.com',
+    capa: null,
+    classe: 'diego',
+    monograma: 'DB',
+    categoria: 'Site de cliente',
+  },
+];
+---
+
+<Layout
+  title="Portfólio | dibr3"
+  description="Conheça projetos e clientes da dibr3: Auto Bruning, Bruning Garopaba, Forte Química e Diego Bruning."
+>
+  <section class="intro" aria-labelledby="portfolio-title">
+    <p class="eyebrow">Projetos da dibr3</p>
+    <h1 id="portfolio-title">Nosso portfólio</h1>
+    <p class="intro-text">Conheça alguns dos clientes e projetos que fazem parte da nossa trajetória. Acesse cada site para ver o trabalho em detalhes.</p>
+  </section>
+
+  <section class="projects" aria-label="Clientes e projetos">
+    {projetos.map((projeto, index) => (
+      <article class="project-card">
+        <div class={`project-art ${projeto.classe}`}>
+          {projeto.capa ? (
+            <img src={projeto.capa} alt={`Captura da página inicial de ${projeto.nome}`} width="450" height="291" loading="lazy" />
+          ) : (
+            <div class="placeholder" aria-hidden="true">
+              <div class="browser-bar"><span></span><span></span><span></span><div class="address"></div></div>
+              <div class="art-content">
+                <span class="monogram">{projeto.monograma}</span>
+                <span class="art-name">{projeto.nome}</span>
+                <span class="art-line"></span>
+              </div>
+              <span class="art-number">0{index + 1}</span>
+            </div>
+          )}
+        </div>
+        <div class="project-info">
+          <div>
+            <p class="category">{projeto.categoria}</p>
+            <h2>{projeto.nome}</h2>
+            <p class="domain">{projeto.dominio}</p>
+          </div>
+          <a href={projeto.url} target="_blank" rel="noopener noreferrer" aria-label={`Visitar site de ${projeto.nome} (abre em nova aba)`}>
+            Visitar site <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </article>
+    ))}
+  </section>
+
+  <section class="contact-banner">
+    <div>
+      <p class="eyebrow">Vamos conversar?</p>
+      <h2>Seu projeto pode ser o próximo.</h2>
+    </div>
+    <a href="mailto:contato@dibr3.com">Entre em contato <span aria-hidden="true">↗</span></a>
+  </section>
+
+  <style>
+    .intro { padding: 5rem 0 3.25rem; max-width: 760px; }
+    .eyebrow { color: #6557c8; font-size: .8rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
+    h1 { color: #24213a; font-size: clamp(2.6rem, 6vw, 4.5rem); line-height: 1.08; letter-spacing: -.045em; margin: .65rem 0 1.25rem; }
+    .intro-text { color: #5e6070; font-size: 1.16rem; line-height: 1.75; }
+    .projects { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2rem; }
+    .project-card { overflow: hidden; background: #fff; border: 1px solid #e9e8f1; border-radius: 18px; box-shadow: 0 12px 34px rgba(34, 28, 78, .06); }
+    .project-art { aspect-ratio: 1036 / 670; display: grid; place-items: center; position: relative; overflow: hidden; color: white; }
+    .project-art img { display: block; width: min(100%, 450px); height: auto; object-fit: contain; }
+    .bruning { background: #171414; }
+    .garopaba { background: #302621; }
+    .forte { background: #eaf6fa; }
+    .placeholder { position: relative; width: 100%; height: 100%; isolation: isolate; }
+    .placeholder::before, .placeholder::after { content: ''; position: absolute; border-radius: 50%; z-index: -1; }
+    .placeholder::before { width: 360px; height: 360px; right: -95px; top: -175px; background: rgba(255,255,255,.12); }
+    .placeholder::after { width: 260px; height: 260px; left: -105px; bottom: -175px; background: rgba(255,255,255,.1); }
+    .diego { background: linear-gradient(135deg, #392755, #8065ac); }
+    .browser-bar { display: flex; align-items: center; gap: 6px; height: 34px; padding: 0 15px; background: rgba(255,255,255,.14); }
+    .browser-bar > span { width: 6px; height: 6px; border-radius: 50%; background: rgba(255,255,255,.65); }
+    .address { width: 42%; max-width: 190px; height: 12px; border-radius: 8px; background: rgba(255,255,255,.17); margin: auto; transform: translateX(-20px); }
+    .art-content { height: calc(100% - 34px); display: flex; flex-direction: column; align-items: flex-start; justify-content: center; padding: 2.5rem 3rem; }
+    .monogram { width: 54px; height: 54px; display: grid; place-items: center; border: 1px solid rgba(255,255,255,.65); border-radius: 12px; font-weight: 800; letter-spacing: -.04em; margin-bottom: 1.2rem; }
+    .art-name { font-size: clamp(1.7rem, 3vw, 2.4rem); font-weight: 800; line-height: 1.1; letter-spacing: -.04em; }
+    .art-line { width: 76px; height: 3px; margin-top: 1rem; background: rgba(255,255,255,.8); border-radius: 2px; }
+    .art-number { position: absolute; right: 2rem; bottom: 1.2rem; font-size: 3.5rem; font-weight: 800; line-height: 1; opacity: .15; }
+    .project-info { display: flex; align-items: end; justify-content: space-between; gap: 1rem; padding: 1.5rem 1.65rem 1.7rem; }
+    .category { color: #6557c8; font-size: .73rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+    h2 { color: #24213a; font-size: 1.45rem; line-height: 1.25; margin: .35rem 0; }
+    .domain { color: #727486; font-size: .86rem; overflow-wrap: anywhere; }
+    .project-info a, .contact-banner a { flex-shrink: 0; color: #5545b7; font-weight: 700; text-decoration: none; }
+    .project-info a:hover, .contact-banner a:hover { text-decoration: underline; }
+    a:focus-visible { outline: 3px solid #6557c8; outline-offset: 4px; border-radius: 3px; }
+    .contact-banner { display: flex; align-items: center; justify-content: space-between; gap: 2rem; margin: 4.5rem 0 1rem; padding: 2.25rem 2.5rem; border-radius: 18px; background: #eeebff; }
+    .contact-banner h2 { font-size: clamp(1.5rem, 3vw, 2rem); margin: .35rem 0 0; }
+    @media (max-width: 800px) { .projects { grid-template-columns: 1fr; } }
+    @media (max-width: 540px) {
+      .intro { padding: 3.5rem 0 2.5rem; }
+      .art-content { padding: 2rem; }
+      .project-info, .contact-banner { align-items: flex-start; flex-direction: column; }
+      .contact-banner { margin-top: 3rem; padding: 1.75rem; }
+    }
+  </style>
+</Layout>

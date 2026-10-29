@@ -6,7 +6,7 @@ import Layout from '../layouts/Layout.astro';
   <section class="hero">
     <h1>Bem-vindo à dibr3</h1>
     <p>Soluções tecnológicas inovadoras para seu negócio</p>
-    <button class="cta-button">Saiba Mais</button>
+    <a class="cta-button" href="/portfolio/">Conheça nosso portfólio</a>
   </section>
 
   <section id="sobre" class="about">
@@ -59,6 +59,7 @@ import Layout from '../layouts/Layout.astro';
     }
 
     .cta-button {
+      display: inline-block;
       background: white;
       color: #667eea;
       padding: 1rem 2rem;
@@ -66,7 +67,7 @@ import Layout from '../layouts/Layout.astro';
       border-radius: 5px;
       font-size: 1rem;
       font-weight: bold;
-      cursor: pointer;
+      text-decoration: none;
       transition: transform 0.3s, box-shadow 0.3s;
     }
 
